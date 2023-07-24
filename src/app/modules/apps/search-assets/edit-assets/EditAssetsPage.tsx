@@ -36,7 +36,7 @@ const EditAssets = () => (
         path='overview/:id'
         element={
           <>
-            <PageTitle breadcrumbs={profileBreadCrumbs}>Overview</PageTitle>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>Activity</PageTitle>
             <Overview />
           </>
         }
@@ -45,7 +45,7 @@ const EditAssets = () => (
         path='projects'
         element={
           <>
-            <PageTitle breadcrumbs={profileBreadCrumbs}>Projects</PageTitle>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>Access control</PageTitle>
             <Projects />
           </>
         }
@@ -54,7 +54,7 @@ const EditAssets = () => (
         path='campaigns'
         element={
           <>
-            <PageTitle breadcrumbs={profileBreadCrumbs}>Campaigns</PageTitle>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>Metadata</PageTitle>
             <Campaigns />
           </>
         }
@@ -63,7 +63,7 @@ const EditAssets = () => (
         path='documents'
         element={
           <>
-            <PageTitle breadcrumbs={profileBreadCrumbs}>Documents</PageTitle>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>Settings</PageTitle>
             <Documents />
           </>
         }

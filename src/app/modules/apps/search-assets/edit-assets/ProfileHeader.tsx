@@ -21,15 +21,15 @@ const ProfileHeader: React.FC = () => {
 
   console.log('location', params);
   
-  const {index} = location.state as LocationAssetsState ?? {index: 1};
+  const {index} = location.state as LocationAssetsState ?? {index: 0};
 
   return (
     <div className='card mb-5 mb-xl-10'>
       <div className='card-body pt-9 pb-0'>
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
-            <div className='symbol symbol-100px symbol-lg-160px symbol-fixed position-relative'>
-              <img src={toAbsoluteUrl(AssetsList[index].url)} alt='Metornic' />
+            <div className=''>
+              <img src={AssetsList[index].url} alt='mamai' height={190} width={300} className='rounded'/>
             </div>
           </div>
 
@@ -54,6 +54,13 @@ const ProfileHeader: React.FC = () => {
                     {AssetsList[index].date}
                   </a>
                 </div>
+                <a
+                    href='#'
+                    className='d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2'
+                  >
+                    <KTIcon iconName='geolocation' className='fs-4 me-1' />
+                    SF, Bay Area
+                  </a>
               </div>
             </div>
 
@@ -68,13 +75,20 @@ const ProfileHeader: React.FC = () => {
 
                     <div className='fw-bold fs-6 text-gray-400'>Shares</div>
                   </div>
-
                   <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
                     <div className='d-flex align-items-center'>
                       <KTIcon iconName='arrow-up' className='fs-3 text-success me-2' />
-                      <div className='fs-2 fw-bolder'>60%</div>
+                      <div className='fs-2 fw-bolder'>160</div>
                     </div>
-                    <div className='fw-bold fs-6 text-gray-400'>Re-share</div>
+                    <div className='fw-bold fs-6 text-gray-400'>Views</div>
+                  </div>
+                  <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
+                    <div className='d-flex align-items-center'>
+                      <KTIcon iconName='arrow-up' className='fs-3 text-success me-2' />
+                      <div className='fs-2 fw-bolder'>10</div>
+                    </div>
+
+                    <div className='fw-bold fs-6 text-gray-400'>Downloads</div>
                   </div>
                 </div>
               </div>
@@ -88,11 +102,22 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/overview' && 'active')
+                  (location.pathname === '/apps/edit-assets/campaigns' && 'active')
                 }
-                to='/apps/edit-assets/overview'
+                to='/apps/edit-assets/campaigns'
               >
-                Overview
+                Metadata
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                className={
+                  `nav-link text-active-primary me-6 ` +
+                  (location.pathname === '/apps/edit-assets/overview/0' && 'active')
+                }
+                to='/apps/edit-assets/overview/0'
+              >
+                Activity
               </Link>
             </li>
             <li className='nav-item'>
@@ -103,18 +128,7 @@ const ProfileHeader: React.FC = () => {
                 }
                 to='/apps/edit-assets/projects'
               >
-                Projects
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className={
-                  `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/campaigns' && 'active')
-                }
-                to='/apps/edit-assets/campaigns'
-              >
-                Campaigns
+                Access control
               </Link>
             </li>
             <li className='nav-item'>
@@ -125,18 +139,7 @@ const ProfileHeader: React.FC = () => {
                 }
                 to='/apps/edit-assets/documents'
               >
-                Documents
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                className={
-                  `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/connections' && 'active')
-                }
-                to='/apps/edit-assets/connections'
-              >
-                Connections
+                Settings
               </Link>
             </li>
           </ul>

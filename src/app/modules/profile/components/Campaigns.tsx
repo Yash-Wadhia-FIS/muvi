@@ -33,7 +33,7 @@ export function Campaigns() {
       </div>
 
       <div className='row g-6 g-xl-9'>
-        <div className='col-sm-6 col-xl-4'>
+        {/* <div className='col-sm-6 col-xl-4'>
           <Card5
             image='/media/svg/brand-logos/twitch.svg'
             title='Twitch Posts'
@@ -128,7 +128,7 @@ export function Campaigns() {
             progress={0.0}
             progressType='Retention'
           />
-        </div>
+        </div> */}
       </div>
 
       <div className='d-flex flex-stack flex-wrap pt-10'>

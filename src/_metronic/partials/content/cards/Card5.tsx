@@ -1,21 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import {FC} from 'react'
-import {KTIcon, toAbsoluteUrl} from '../../../helpers'
-import {Dropdown1} from '../dropdown/Dropdown1'
+import { FC, useState } from 'react'
+import { Col, Form } from "react-bootstrap";
+import Select from 'react-select';
+
+
+import { KTIcon, toAbsoluteUrl } from '../../../helpers'
+import { Dropdown1 } from '../dropdown/Dropdown1'
 
 type Props = {
-  image: string
+  image?: string
   title: string
   description: string
   status: 'up' | 'down'
   statusValue: number
   statusDesc: string
   progress: number
-  progressType: string
+  progressType: string,
+  icons?: string,
+  options: any,
 }
 
 const Card5: FC<Props> = ({
   image,
+  icons = '',
   title,
   description,
   status,
@@ -23,13 +30,20 @@ const Card5: FC<Props> = ({
   statusDesc,
   progress,
   progressType,
+  options
 }) => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleChange = (selectedOptions: any) => {
+    setSelectedOptions(selectedOptions);
+  };
+
   return (
     <div className='card h-100'>
       <div className='card-header flex-nowrap border-0 pt-9'>
         <div className='card-title m-0'>
-          <div className='symbol symbol-45px w-45px bg-light me-5'>
-            <img src={toAbsoluteUrl(image)} alt='Metronic' className='p-3' />
+          <div className='symbol symbol-45px w-45px me-5 d-flex justify-center'>
+            <KTIcon iconName={icons} className='fs-3 text-primary' />
           </div>
 
           <a href='#' className='fs-4 fw-bold text-hover-primary text-gray-600 m-0'>
@@ -53,32 +67,18 @@ const Card5: FC<Props> = ({
       </div>
 
       <div className='card-body d-flex flex-column px-9 pt-6 pb-8'>
-        <div className='fs-2tx fw-bolder mb-3'>{description}</div>
-
-        <div className='d-flex align-items-center flex-wrap mb-5 mt-auto fs-6'>
-          {status === 'up' && (
-            <KTIcon iconName='arrow-up-right' className='fs-3 me-1 text-success' />
-          )}
-
-          {status === 'down' && (
-            <KTIcon iconName='arrow-down-right' className='fs-3 me-1 text-danger' />
-          )}
-
-          <div className={`fw-bolder me-2 ` + (status === 'up' ? 'text-success' : 'text-danger')}>
-            {status === 'up' ? '+' : '-'}
-            {statusValue}%
-          </div>
-
-          <div className='fw-bold text-gray-400'>{statusDesc}</div>
-        </div>
-
-        <div className='d-flex align-items-center fw-bold'>
-          <span className='badge bg-light text-gray-700 px-3 py-2 me-2'>{progress}%</span>
-          <span className='text-gray-400 fs-7'>{progressType}</span>
-        </div>
+      <div className="row">
+          <Select
+            isMulti
+            options={options}
+            value={selectedOptions}
+            onChange={handleChange}
+            className="w-100"
+          />
+      </div>
       </div>
     </div>
   )
 }
 
-export {Card5}
+export { Card5 }

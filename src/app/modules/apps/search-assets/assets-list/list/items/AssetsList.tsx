@@ -11,8 +11,8 @@ type items = {
 export const AssetsList: Array<items> = [
     {
         index: 0,
-        title: 'Cup & Green',
-        url: '/media/stock/600x400/img-20.jpg',
+        title: 'Sport sponsorship',
+        url: 'https://vid.alarabiya.net/images/2020/11/16/b144d86d-5850-4db0-b544-538a0b20b296/b144d86d-5850-4db0-b544-538a0b20b296_16x9_1200x676.jpg?width=1120&format=jpg',
         size: '87KB',
         status: 'Approved',
         date: '26 Aug 2022. 10:26 pm',
