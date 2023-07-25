@@ -79,7 +79,7 @@ const AssetsTable = () => {
                 <div className='symbol symbol-160px symbol-2by3 me-4 d-flex justify-content-center'>
                   <div
                     className='symbol-label'
-                    style={{ backgroundImage: `url(${data.index === 0 ? data.url : toAbsoluteUrl(data.url)})` }}
+                    style={{ backgroundImage: `url(${data.url})` }}
                   ></div>
                 </div>
                 <div className="d-flex justify-content-center mt-3 mb-5">

@@ -93,7 +93,7 @@ const SidebarMenuMain = () => {
         to='/apps/chat'
         title='Assets'
         fontIcon='bi-chat-left'
-        icon='message-text-2'
+        icon='some-files'
       >
         <SidebarMenuItem to='/apps/search-assets' title='Search Assets' hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title='My Assets' hasBullet={true} />
@@ -114,7 +114,7 @@ const SidebarMenuMain = () => {
         to='/apps/chat'
         title='Administration'
         fontIcon='bi-chat-left'
-        icon='message-text-2'
+        icon='user'
       >
         <SidebarMenuItem to='/apps/search-assets' title='GCP Settings' hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title='Audit Log' hasBullet={true} />

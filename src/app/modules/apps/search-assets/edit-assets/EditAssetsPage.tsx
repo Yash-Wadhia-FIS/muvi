@@ -41,7 +41,7 @@ const EditAssets = () => (
         }
       />
       <Route
-        path='access-control'
+        path='access-control/:id'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Access control</PageTitle>
@@ -50,7 +50,7 @@ const EditAssets = () => (
         }
       />
       <Route
-        path='metadata'
+        path='metadata/:id'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Metadata</PageTitle>
@@ -59,7 +59,7 @@ const EditAssets = () => (
         }
       />
       <Route
-        path='settings'
+        path='settings/:id'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Settings</PageTitle>

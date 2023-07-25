@@ -19,7 +19,7 @@ const assetsItems = ({title, url, size, status, index, date, metaData}: items, o
         <tr key={index}>
             <td>
                 <div className='symbol symbol-50px me-2'>
-                    <div className='symbol-label' style={{ backgroundImage: `url(${index === 0 ? url : toAbsoluteUrl(url)})` }}>
+                    <div className='symbol-label' style={{ backgroundImage: `url(${url})` }}>
                     </div>
                 </div>
             </td>
