@@ -59,7 +59,7 @@ const ProfileHeader: React.FC = () => {
                     className='d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2'
                   >
                     <KTIcon iconName='geolocation' className='fs-4 me-1' />
-                    SF, Bay Area
+                    Riyadh, KSA
                   </a>
               </div>
             </div>

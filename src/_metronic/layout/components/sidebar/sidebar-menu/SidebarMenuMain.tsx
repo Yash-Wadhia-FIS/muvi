@@ -85,15 +85,20 @@ const SidebarMenuMain = () => {
       </SidebarMenuItemWithSub> */}
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
-          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Apps</span>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Dashboard</span>
         </div>
       </div>
-      <SidebarMenuItem
-        to='/apps/search-assets'
-        icon='file'
+      
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
         title='Assets'
-        fontIcon='bi-layers'
-      />
+        fontIcon='bi-chat-left'
+        icon='message-text-2'
+      >
+        <SidebarMenuItem to='/apps/search-assets' title='Search Assets' hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title='My Assets' hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/drawer-chat' title='Upload Assets' hasBullet={true} />
+      </SidebarMenuItemWithSub>
       {/* <SidebarMenuItemWithSub
         to='/apps/chat'
         title='Chat'
@@ -104,12 +109,22 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/apps/chat/group-chat' title='Group Chart' hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/drawer-chat' title='Drawer Chart' hasBullet={true} />
       </SidebarMenuItemWithSub> */}
-      <SidebarMenuItem
+      
+       <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title='Administration'
+        fontIcon='bi-chat-left'
+        icon='message-text-2'
+      >
+        <SidebarMenuItem to='/apps/search-assets' title='GCP Settings' hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title='Audit Log' hasBullet={true} />
+        <SidebarMenuItem
         to='/apps/user-management/users'
         icon='abstract-28'
         title='User management'
         fontIcon='bi-layers'
       />
+      </SidebarMenuItemWithSub>
       {/* <div className='menu-item'>
         <a
           target='_blank'
