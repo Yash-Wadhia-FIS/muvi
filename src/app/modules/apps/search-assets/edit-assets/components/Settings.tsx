@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
-import { KTIcon } from '../../../../../../_metronic/helpers'
-import { Card4 } from '../../../../../../_metronic/partials/content/cards/Card4'
 
-export function Documents() {
+export function Settings() {
   const [status, setStatus] = useState<string | undefined>()
   const [sharing, setSharing] = useState<string | undefined>()
   const [urlExpiry, setUrlExpiry] = useState<string | undefined>()

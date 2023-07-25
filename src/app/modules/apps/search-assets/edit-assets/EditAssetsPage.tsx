@@ -1,16 +1,15 @@
 import {Navigate, Routes, Route, Outlet} from 'react-router-dom'
 import {PageLink, PageTitle} from '../../../../../_metronic/layout/core'
-import {Overview} from './components/Overview'
-import {Projects} from './components/Projects'
-import {Campaigns} from './components/Campaigns'
-import {Documents} from './components/Documents'
-import {Connections} from './components/Connections'
-import {ProfileHeader} from './ProfileHeader'
+import {Activity} from './components/Activity'
+import {AccessControl} from './components/AccessControl'
+import {Metadata} from './components/Metadata'
+import {Settings} from './components/Settings'
+import {ProfileHeader} from './EditAssetsHeader'
 
 const profileBreadCrumbs: Array<PageLink> = [
   {
     title: 'Assets',
-    path: 'overview',
+    path: 'activity',
     isSeparator: false,
     isActive: false,
   },
@@ -33,51 +32,42 @@ const EditAssets = () => (
       }
     >
       <Route
-        path='overview/:id'
+        path='activity/:id'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Activity</PageTitle>
-            <Overview />
+            <Activity />
           </>
         }
       />
       <Route
-        path='projects'
+        path='access-control'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Access control</PageTitle>
-            <Projects />
+            <AccessControl />
           </>
         }
       />
       <Route
-        path='campaigns'
+        path='metadata'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Metadata</PageTitle>
-            <Campaigns />
+            <Metadata />
           </>
         }
       />
       <Route
-        path='documents'
+        path='settings'
         element={
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>Settings</PageTitle>
-            <Documents />
+            <Settings />
           </>
         }
       />
-      <Route
-        path='connections'
-        element={
-          <>
-            <PageTitle breadcrumbs={profileBreadCrumbs}>Connections</PageTitle>
-            <Connections />
-          </>
-        }
-      />
-      <Route index element={<Navigate to='overview' />} />
+      <Route index element={<Navigate to='activity' />} />
     </Route>
   </Routes>
 )

@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {IconUserModel} from '../ProfileModels'
+import {IconUserModel} from '../EditAssetsModel'
 import {toAbsoluteUrl} from '../../../../../../_metronic/helpers'
 import {OverlayTrigger, Tooltip} from 'react-bootstrap'
 

@@ -113,9 +113,9 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/overview/0' && 'active')
+                  (location.pathname === '/apps/edit-assets/activity/0' && 'active')
                 }
-                to='/apps/edit-assets/overview/0'
+                to='/apps/edit-assets/activity/0'
               >
                 Activity
               </Link>

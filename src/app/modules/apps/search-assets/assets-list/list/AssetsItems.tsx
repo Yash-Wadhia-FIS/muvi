@@ -24,7 +24,7 @@ const AssetsTable = () => {
 
   const renderAssetsItems = () => {
     const onEdit = (data: any): void => {
-      navigate(`/apps/edit-assets/overview/${data?.index}`)
+      navigate(`/apps/edit-assets/activity/${data?.index}`)
     }
 
     return (
@@ -36,7 +36,7 @@ const AssetsTable = () => {
   }
 
   const onGridEdit = (data: any): void => {
-    navigate(`/apps/edit-assets/overview/${data?.index}`)
+    navigate(`/apps/edit-assets/activity/${data?.index}`)
   }
 
   const handleMouseEnter = (index: number) => {
