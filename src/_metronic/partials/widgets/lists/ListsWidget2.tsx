@@ -43,7 +43,7 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
               Emma Smith
             </a>
-            <span className='text-muted d-block fw-semibold'>Project Manager</span>
+            <span className='text-muted d-block fw-semibold'>Admin</span>
           </div>
           {/* end::Text */}
         </div>
@@ -60,7 +60,7 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
               Sean Bean
             </a>
-            <span className='text-muted d-block fw-semibold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-semibold'>Viewer</span>
           </div>
           {/* end::Text */}
         </div>
@@ -77,7 +77,7 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
               Brian Cox
             </a>
-            <span className='text-muted d-block fw-semibold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-semibold'>Viewer</span>
           </div>
           {/* end::Text */}
         </div>
@@ -94,7 +94,7 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
               Francis Mitcham
             </a>
-            <span className='text-muted d-block fw-semibold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-semibold'>Download</span>
           </div>
           {/* end::Text */}
         </div>
@@ -111,7 +111,7 @@ const ListsWidget2: React.FC<Props> = ({className}) => {
             <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
               Dan Wilson
             </a>
-            <span className='text-muted d-block fw-semibold'>PHP, SQLite, Artisan CLI</span>
+            <span className='text-muted d-block fw-semibold'>Admin</span>
           </div>
           {/* end::Text */}
         </div>

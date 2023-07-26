@@ -10,7 +10,7 @@ const SearchAssetsPage = () => {
   const usersBreadcrumbs: Array<PageLink> = [
     {
       title: intl.formatMessage({id: 'MENU.ASSETS'}),
-      path: '/apps/search-assets',
+      path: '/apps/assets/search-assets',
       isSeparator: false,
       isActive: false,
     },
@@ -35,7 +35,7 @@ const SearchAssetsPage = () => {
           }
         />
       </Route>
-      <Route index element={<Navigate to='/apps/search-assets/assets' />} />
+      <Route index element={<Navigate to='/apps/assets/search-assets/assets' />} />
     </Routes>
   )
 }
