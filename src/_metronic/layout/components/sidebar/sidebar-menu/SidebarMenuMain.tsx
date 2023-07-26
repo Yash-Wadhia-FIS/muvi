@@ -125,6 +125,23 @@ const SidebarMenuMain = () => {
         fontIcon='bi-layers'
       />
       </SidebarMenuItemWithSub>
+
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title='Projects'
+        fontIcon='bi-chat-left'
+        icon='message-text-2'
+      >
+        <SidebarMenuItem to='/apps/search-assets' title='My Projects' hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title='Add Project' hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title='Shared Projects' hasBullet={true} />
+        <SidebarMenuItem
+        to='/apps/user-management/users'
+        icon='abstract-28'
+        title='User management'
+        fontIcon='bi-layers'
+      />
+      </SidebarMenuItemWithSub>
       {/* <div className='menu-item'>
         <a
           target='_blank'
