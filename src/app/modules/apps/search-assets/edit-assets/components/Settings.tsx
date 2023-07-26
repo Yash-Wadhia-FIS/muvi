@@ -29,7 +29,6 @@ export function Settings() {
                 onChange={(e) => setStatus(e.target.value)}
                 value={status}
               >
-                <option value=''></option>
                 <option value='Administrator'>Active</option>
                 <option value='Analyst'>Inactive</option>
               </select>
@@ -52,7 +51,6 @@ export function Settings() {
                 onChange={(e) => setSharing(e.target.value)}
                 value={sharing}
               >
-                <option value=''></option>
                 <option value='Administrator'>Enable</option>
                 <option value='Analyst'>Disable</option>
               </select>
@@ -75,7 +73,6 @@ export function Settings() {
                   onChange={(e) => setUrlExpiry(e.target.value)}
                   value={urlExpiry}
                 >
-                  <option value=''></option>
                   <option value='Administrator'>Tomorrow</option>
                   <option value='Analyst'>3 days</option>
                   <option value='Developer'>1 Week</option>

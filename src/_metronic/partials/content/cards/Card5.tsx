@@ -2,6 +2,7 @@
 import { FC, useState } from 'react'
 import { Col, Form } from "react-bootstrap";
 import Select from 'react-select';
+import { TagsInput } from 'react-tag-input-component';
 
 
 import { KTIcon, toAbsoluteUrl } from '../../../helpers'
@@ -32,7 +33,7 @@ const Card5: FC<Props> = ({
   progressType,
   options
 }) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
   const handleChange = (selectedOptions: any) => {
     setSelectedOptions(selectedOptions);
@@ -68,12 +69,9 @@ const Card5: FC<Props> = ({
 
       <div className='card-body d-flex flex-column px-9 pt-6 pb-8'>
       <div className="row">
-          <Select
-            isMulti
-            options={options}
+          <TagsInput
             value={selectedOptions}
-            onChange={handleChange}
-            className="w-100"
+            onChange={setSelectedOptions}
           />
       </div>
       </div>

@@ -77,7 +77,7 @@ const PrivateRoutes = () => {
           }
         />
         <Route
-          path='apps/search-assets/*'
+          path='apps/assets/search-assets/*'
           element={
             <SuspensedView>
               <SearchAssetsPage />

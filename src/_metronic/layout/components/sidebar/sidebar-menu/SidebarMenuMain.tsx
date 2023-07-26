@@ -95,7 +95,7 @@ const SidebarMenuMain = () => {
         fontIcon='bi-chat-left'
         icon='some-files'
       >
-        <SidebarMenuItem to='/apps/search-assets' title={intl.formatMessage({id: 'MENU.SEARCH_ASSETS'})} hasBullet={true} />
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({id: 'MENU.SEARCH_ASSETS'})} hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({id: 'MENU.MY_ASSETS'})} hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/drawer-chat' title={intl.formatMessage({id: 'MENU.UPLOAD_ASSETS'})} hasBullet={true} />
       </SidebarMenuItemWithSub>
@@ -116,7 +116,7 @@ const SidebarMenuMain = () => {
         fontIcon='bi-chat-left'
         icon='user'
       >
-        <SidebarMenuItem to='/apps/search-assets' title={intl.formatMessage({id: 'MENU.GCP_SETTINGS'})} hasBullet={true} />
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({id: 'MENU.GCP_SETTINGS'})} hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({id: 'MENU.AUDIT_LOGS'})} hasBullet={true} />
         <SidebarMenuItem
         to='/apps/user-management/users'
