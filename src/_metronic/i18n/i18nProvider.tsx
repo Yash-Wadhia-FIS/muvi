@@ -2,6 +2,7 @@ import {FC} from 'react'
 import {useLang} from './Metronici18n'
 import {IntlProvider} from 'react-intl'
 import '@formatjs/intl-relativetimeformat/polyfill'
+import '@formatjs/intl-relativetimeformat/locale-data/ar'
 import '@formatjs/intl-relativetimeformat/locale-data/en'
 import '@formatjs/intl-relativetimeformat/locale-data/de'
 import '@formatjs/intl-relativetimeformat/locale-data/es'
@@ -15,9 +16,11 @@ import esMessages from './messages/es.json'
 import frMessages from './messages/fr.json'
 import jaMessages from './messages/ja.json'
 import zhMessages from './messages/zh.json'
+import arMessages from './messages/ar.json'
 import {WithChildren} from '../helpers'
 
 const allMessages = {
+  ar: arMessages,
   de: deMessages,
   en: enMessages,
   es: esMessages,

@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
+import { useIntl } from 'react-intl'
 import {KTIcon} from '../../../helpers'
 
 const SidebarFooter = () => {
+  const intl = useIntl();
   return (
     <div className='app-sidebar-footer flex-column-auto pt-2 pb-6 px-6' id='kt_app_sidebar_footer'>
       <a
@@ -13,7 +15,8 @@ const SidebarFooter = () => {
         data-bs-dismiss-='click'
         title='Metronic Docs & Components'
       >
-        <span className='btn-label'>Sign out</span>
+        <span className='btn-label'>
+          {intl.formatMessage({id: 'AUTH.GENERAL.SIGNOUT_BUTTON'})}</span>
         <KTIcon iconName='document' className='btn-icon fs-2 m-0' />
       </a>
     </div>

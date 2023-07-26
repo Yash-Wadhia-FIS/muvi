@@ -4,6 +4,7 @@ import {KTIcon, toAbsoluteUrl} from '../../../../../_metronic/helpers'
 import {Link, useLocation, useParams} from 'react-router-dom'
 import {Dropdown1} from '../../../../../_metronic/partials'
 import { AssetsList } from '../assets-list/list/items/AssetsList';
+import { useIntl } from 'react-intl';
 
 interface LocationAssetsState {
   index: number;
@@ -18,6 +19,7 @@ interface LocationAssetsState {
 const ProfileHeader: React.FC = () => {
   const location = useLocation();
   const params = useParams();
+  const intl = useIntl();
   
   const {id} = params as any;
   const {index} = location.state as LocationAssetsState ?? {index: 0};
@@ -101,44 +103,44 @@ const ProfileHeader: React.FC = () => {
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/campaigns' && 'active')
+                  (location.pathname === `/apps/edit-assets/metadata/${id}` && 'active')
                 }
-                to='/apps/edit-assets/campaigns'
+                to={`/apps/edit-assets/metadata/${id}`}
               >
-                Metadata
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.METADATA'})}
               </Link>
             </li>
             <li className='nav-item'>
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/activity/0' && 'active')
+                  (location.pathname === `/apps/edit-assets/activity/${id}` && 'active')
                 }
-                to='/apps/edit-assets/activity/0'
+                to={`/apps/edit-assets/activity/${id}`}
               >
-                Activity
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACTIVITY'})}
               </Link>
             </li>
             <li className='nav-item'>
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/projects' && 'active')
+                  (location.pathname === `/apps/edit-assets/access-control/${id}` && 'active')
                 }
-                to='/apps/edit-assets/projects'
+                to={`/apps/edit-assets/access-control/${id}`}
               >
-                Access control
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACCESS_CONTROL'})}
               </Link>
             </li>
             <li className='nav-item'>
               <Link
                 className={
                   `nav-link text-active-primary me-6 ` +
-                  (location.pathname === '/apps/edit-assets/documents' && 'active')
+                  (location.pathname === `/apps/edit-assets/settings/${id}` && 'active')
                 }
-                to='/apps/edit-assets/documents'
+                to={`/apps/edit-assets/settings/${id}`}
               >
-                Settings
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}
               </Link>
             </li>
           </ul>
