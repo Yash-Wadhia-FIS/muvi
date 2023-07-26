@@ -2,13 +2,12 @@
 import React from 'react'
 import {Card5} from '../../../../../../_metronic/partials/content/cards/Card5'
 
-export function Campaigns() {
+export function Metadata() {
   return (
     <>
       <div className='d-flex flex-wrap flex-stack mb-6'>
         <h3 className='fw-bolder my-2'>
           Metadata
-          
         </h3>
       </div>
 

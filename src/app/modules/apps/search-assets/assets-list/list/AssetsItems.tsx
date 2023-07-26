@@ -24,7 +24,7 @@ const AssetsTable = () => {
 
   const renderAssetsItems = () => {
     const onEdit = (data: any): void => {
-      navigate(`/apps/edit-assets/overview/${data?.index}`)
+      navigate(`/apps/edit-assets/activity/${data?.index}`)
     }
 
     return (
@@ -36,7 +36,7 @@ const AssetsTable = () => {
   }
 
   const onGridEdit = (data: any): void => {
-    navigate(`/apps/edit-assets/overview/${data?.index}`)
+    navigate(`/apps/edit-assets/activity/${data?.index}`)
   }
 
   const handleMouseEnter = (index: number) => {
@@ -79,7 +79,7 @@ const AssetsTable = () => {
                 <div className='symbol symbol-160px symbol-2by3 me-4 d-flex justify-content-center'>
                   <div
                     className='symbol-label'
-                    style={{ backgroundImage: `url(${data.index === 0 ? data.url : toAbsoluteUrl(data.url)})` }}
+                    style={{ backgroundImage: `url(${data.url})` }}
                   ></div>
                 </div>
                 <div className="d-flex justify-content-center mt-3 mb-5">

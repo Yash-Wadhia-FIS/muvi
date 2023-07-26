@@ -4,9 +4,11 @@ import {Link} from 'react-router-dom'
 import {useAuth} from '../../../../app/modules/auth'
 import {Languages} from './Languages'
 import {toAbsoluteUrl} from '../../../helpers'
+import { useIntl } from 'react-intl'
 
 const HeaderUserMenu: FC = () => {
   const {currentUser, logout} = useAuth()
+  const intl = useIntl()
   return (
     <div
       className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px'
@@ -34,13 +36,13 @@ const HeaderUserMenu: FC = () => {
 
       <div className='menu-item px-5'>
         <Link to={'/crafted/pages/profile'} className='menu-link px-5'>
-          My Profile
+          {intl.formatMessage({id: 'MENU.MY_PROFILE'})}
         </Link>
       </div>
 
       <div className='menu-item px-5'>
         <a href='#' className='menu-link px-5'>
-          <span className='menu-text'>My Projects</span>
+          <span className='menu-text'>{intl.formatMessage({id: 'MENU.MY_PROJECTS'})}</span>
           <span className='menu-badge'>
             <span className='badge badge-light-danger badge-circle fw-bolder fs-7'>3</span>
           </span>
@@ -54,32 +56,32 @@ const HeaderUserMenu: FC = () => {
         data-kt-menu-flip='bottom'
       >
         <a href='#' className='menu-link px-5'>
-          <span className='menu-title'>My Subscription</span>
+          <span className='menu-title'>{intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION'})}</span>
           <span className='menu-arrow'></span>
         </a>
 
         <div className='menu-sub menu-sub-dropdown w-175px py-4'>
           <div className='menu-item px-3'>
             <a href='#' className='menu-link px-5'>
-              Referrals
+            {intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION.REFERRALS'})}
             </a>
           </div>
 
           <div className='menu-item px-3'>
             <a href='#' className='menu-link px-5'>
-              Billing
+            {intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION.BILLING'})}
             </a>
           </div>
 
           <div className='menu-item px-3'>
             <a href='#' className='menu-link px-5'>
-              Payments
+            {intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION.PAYMENT'})}
             </a>
           </div>
 
           <div className='menu-item px-3'>
             <a href='#' className='menu-link d-flex flex-stack px-5'>
-              Statements
+            {intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION.STATEMENTS'})}
               <i
                 className='fas fa-exclamation-circle ms-2 fs-7'
                 data-bs-toggle='tooltip'
@@ -100,7 +102,7 @@ const HeaderUserMenu: FC = () => {
                   defaultChecked={true}
                   name='notifications'
                 />
-                <span className='form-check-label text-muted fs-7'>Notifications</span>
+                <span className='form-check-label text-muted fs-7'>{intl.formatMessage({id: 'MENU.MY_SUBSCRIPTION.NOTIFICATIONS'})}</span>
               </label>
             </div>
           </div>
@@ -109,7 +111,7 @@ const HeaderUserMenu: FC = () => {
 
       <div className='menu-item px-5'>
         <a href='#' className='menu-link px-5'>
-          My Statements
+          {intl.formatMessage({id: 'MENU.MY_STATEMENTS'})}
         </a>
       </div>
 
@@ -119,13 +121,13 @@ const HeaderUserMenu: FC = () => {
 
       <div className='menu-item px-5 my-1'>
         <Link to='/crafted/account/settings' className='menu-link px-5'>
-          Account Settings
+        {intl.formatMessage({id: 'MENU.ACCOUNT_SETTINGS'})}
         </Link>
       </div>
 
       <div className='menu-item px-5'>
         <a onClick={logout} className='menu-link px-5'>
-          Sign Out
+          {intl.formatMessage({id: 'AUTH.GENERAL.SIGNOUT_BUTTON'})}
         </a>
       </div>
     </div>

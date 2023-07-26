@@ -10,7 +10,7 @@ import {
   ListsWidget2,
 } from '../../../../../../_metronic/partials/widgets'
 
-export function Projects() {
+export function AccessControl() {
   return (
     <div className='row g-5 g-xxl-8'>
       <div className='col-xl-6'>
