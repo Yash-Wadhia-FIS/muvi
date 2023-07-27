@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Col, Form } from "react-bootstrap";
 import Select from 'react-select';
 import { TagsInput } from 'react-tag-input-component';
@@ -19,6 +19,7 @@ type Props = {
   progressType: string,
   icons?: string,
   options: any,
+  onOptionsSelected?: (otpions: string []) => void
 }
 
 const Card5: FC<Props> = ({
@@ -31,13 +32,14 @@ const Card5: FC<Props> = ({
   statusDesc,
   progress,
   progressType,
-  options
+  options,
+  onOptionsSelected = () => {},
 }) => {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const handleChange = (selectedOptions: any) => {
-    setSelectedOptions(selectedOptions);
-  };
+  useEffect(() => {
+    onOptionsSelected(selectedOptions);
+  }, [selectedOptions, onOptionsSelected]);
 
   return (
     <div className='card h-100'>

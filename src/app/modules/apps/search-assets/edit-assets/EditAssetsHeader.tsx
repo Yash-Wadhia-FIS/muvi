@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import {KTIcon, toAbsoluteUrl} from '../../../../../_metronic/helpers'
 import {Link, useLocation, useParams} from 'react-router-dom'
-import {Dropdown1} from '../../../../../_metronic/partials'
 import { AssetsList } from '../assets-list/list/items/AssetsList';
 import { useIntl } from 'react-intl';
+import {useSelector, shallowEqual} from 'react-redux';
+
+import {KTIcon} from '../../../../../_metronic/helpers'
+import { RootState } from '../../../../store';
 
 interface LocationAssetsState {
   index: number;
@@ -20,6 +22,8 @@ const ProfileHeader: React.FC = () => {
   const location = useLocation();
   const params = useParams();
   const intl = useIntl();
+
+  const assets = useSelector((state: RootState) => state.assets.assets, shallowEqual);
   
   const {id} = params as any;
   const {index} = location.state as LocationAssetsState ?? {index: 0};
@@ -30,7 +34,7 @@ const ProfileHeader: React.FC = () => {
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
             <div className=''>
-              <img src={AssetsList[id].url} alt='mamai' height={190} width={300} className='rounded'/>
+              <img src={assets[id].url} alt='mamai' height={190} width={300} className='rounded'/>
             </div>
           </div>
 
@@ -39,7 +43,7 @@ const ProfileHeader: React.FC = () => {
               <div className='d-flex flex-column'>
                 <div className='d-flex align-items-center mb-2'>
                   <a href='#' className='text-gray-800 text-hover-primary fs-2 fw-bolder me-1'>
-                  {AssetsList[id].title}
+                  {assets[id].title}
                   </a>
                   <a href='#'>
                     <KTIcon iconName='verify' className='fs-1 text-primary' />
@@ -52,7 +56,7 @@ const ProfileHeader: React.FC = () => {
                     className='d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2'
                   >
                     <KTIcon iconName='time' className='fs-4 me-1' />
-                    {AssetsList[id].date}
+                    {assets[id].date}
                   </a>
                 </div>
                 <a
@@ -140,7 +144,7 @@ const ProfileHeader: React.FC = () => {
                 }
                 to={`/apps/edit-assets/settings/${id}`}
               >
-                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACTIVITY'})}
               </Link>
             </li>
           </ul>
