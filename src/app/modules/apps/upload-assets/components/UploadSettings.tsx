@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react'
+import { useIntl } from 'react-intl'
 
 export function UploadSettings() {
+  const intl = useIntl();
+
   const [status, setStatus] = useState<string | undefined>()
   const [sharing, setSharing] = useState<string | undefined>()
   const [urlExpiry, setUrlExpiry] = useState<string | undefined>()
@@ -9,7 +12,7 @@ export function UploadSettings() {
     <>
       <div className='d-flex flex-wrap flex-stack mb-6'>
         <h3 className='fw-bolder my-2'>
-          Settings
+          {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}
         </h3>
       </div>
 
@@ -18,7 +21,7 @@ export function UploadSettings() {
           <div className='card h-100'>
           <div className='card-body d-flex flex-column p-8'>
             <div className='mb-10'>
-              <label className='form-label fs-6 fw-bold'>Status:</label>
+              <label className='form-label fs-6 fw-bold'>{intl.formatMessage({id: 'ASSETS.GENERAL.STATUS'})}:</label>
               <select
                 className='form-select form-select-solid fw-bolder'
                 data-kt-select2='true'
@@ -40,7 +43,7 @@ export function UploadSettings() {
         <div className='card h-100'>
           <div className='card-body d-flex flex-column p-8'>
             <div className='mb-10'>
-              <label className='form-label fs-6 fw-bold'>Sharing:</label>
+              <label className='form-label fs-6 fw-bold'>{intl.formatMessage({id: 'ASSETS.GENERAL.SHARING'})}:</label>
               <select
                 className='form-select form-select-solid fw-bolder'
                 data-kt-select2='true'
@@ -62,7 +65,7 @@ export function UploadSettings() {
           <div className='card h-100'>
             <div className='card-body d-flex flex-column p-8'>
               <div className='mb-10'>
-                <label className='form-label fs-6 fw-bold'>URL Expiry:</label>
+                <label className='form-label fs-6 fw-bold'>{intl.formatMessage({id: 'ASSETS.GENERAL.URL_EXPIRY'})}:</label>
                 <select
                   className='form-select form-select-solid fw-bolder'
                   data-kt-select2='true'
