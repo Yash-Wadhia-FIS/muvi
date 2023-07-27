@@ -11,7 +11,7 @@ const UploadAssetsPage = () => {
     const usersBreadcrumbs: Array<PageLink> = [
         {
             title: intl.formatMessage({ id: 'MENU.ASSETS' }),
-            path: 'upload-meta-data',
+            path: 'upload-assets',
             isSeparator: false,
             isActive: false,
         },
@@ -36,7 +36,7 @@ const UploadAssetsPage = () => {
                 path='upload-meta-data'
                 element={
                     <>
-                        <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'MENU.UPLOAD_ASSETS' })}</PageTitle>
+                        <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'ASSETS.EDIT_ASSETS.SETTINGS' })}</PageTitle>
                         <UploadMetadata />
                     </>
                 }
@@ -45,13 +45,13 @@ const UploadAssetsPage = () => {
                 path='upload-settings'
                 element={
                     <>
-                        <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'MENU.UPLOAD_ASSETS' })}</PageTitle>
+                        <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'ASSETS.EDIT_ASSETS.SETTINGS' })}</PageTitle>
                         <UploadSettings />
                     </>
                 }
             />
         </Route>
-            <Route index element={<Navigate to='upload-meta-data' />} />
+            <Route index element={<Navigate to='upload-assets' />} />
         </Routes>
     )
 }

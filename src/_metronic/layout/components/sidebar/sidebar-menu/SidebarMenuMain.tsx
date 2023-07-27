@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
-import {useIntl} from 'react-intl'
-import {KTIcon} from '../../../../helpers'
-import {SidebarMenuItemWithSub} from './SidebarMenuItemWithSub'
-import {SidebarMenuItem} from './SidebarMenuItem'
+import { useIntl } from 'react-intl'
+import { KTIcon } from '../../../../helpers'
+import { SidebarMenuItemWithSub } from './SidebarMenuItemWithSub'
+import { SidebarMenuItem } from './SidebarMenuItem'
 
 const SidebarMenuMain = () => {
   const intl = useIntl()
@@ -85,19 +85,19 @@ const SidebarMenuMain = () => {
       </SidebarMenuItemWithSub> */}
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
-          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({id: 'MENU.DASHBOARD'})}</span>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.DASHBOARD' })}</span>
         </div>
       </div>
-      
+
       <SidebarMenuItemWithSub
         to='/apps/chat'
-        title={intl.formatMessage({id: 'MENU.ASSETS'})}
+        title={intl.formatMessage({ id: 'MENU.ASSETS' })}
         fontIcon='bi-chat-left'
         icon='some-files'
       >
-        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({id: 'MENU.SEARCH_ASSETS'})} hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({id: 'MENU.MY_ASSETS'})} hasBullet={true} />
-        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({id: 'MENU.UPLOAD_ASSETS'})} hasBullet={true} />
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SEARCH_ASSETS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.MY_ASSETS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.UPLOAD_ASSETS' })} hasBullet={true} />
 
       </SidebarMenuItemWithSub>
       {/* <SidebarMenuItemWithSub
@@ -110,53 +110,35 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/apps/chat/group-chat' title='Group Chart' hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/drawer-chat' title='Drawer Chart' hasBullet={true} />
       </SidebarMenuItemWithSub> */}
-      
-       <SidebarMenuItemWithSub
-        to='/apps/chat'
-        title={intl.formatMessage({id: 'MENU.ADMINISTRATION'})}
-        fontIcon='bi-chat-left'
-        icon='user'
-      >
-        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({id: 'MENU.GCP_SETTINGS'})} hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({id: 'MENU.AUDIT_LOGS'})} hasBullet={true} />
-        <SidebarMenuItem
-        to='/apps/user-management/users'
-        icon='abstract-28'
-        title={intl.formatMessage({id: 'MENU.USER_MANAGEMENT'})}
-        fontIcon='bi-layers'
-      />
-      </SidebarMenuItemWithSub>
 
       <SidebarMenuItemWithSub
         to='/apps/chat'
-        title='Projects'
+        title={intl.formatMessage({ id: 'MENU.ADMINISTRATION' })}
         fontIcon='bi-chat-left'
-        icon='message-text-2'
+        icon='user'
       >
-        <SidebarMenuItem to='/apps/search-assets' title='My Projects' hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title='Add Project' hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title='Shared Projects' hasBullet={true} />
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.GCP_SETTINGS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.AUDIT_LOGS' })} hasBullet={true} />
         <SidebarMenuItem
-        to='/apps/user-management/users'
-        icon='abstract-28'
-        title='User management'
-        fontIcon='bi-layers'
-      />
+          to='/apps/user-management/users'
+          icon='abstract-28'
+          title={intl.formatMessage({ id: 'MENU.USER_MANAGEMENT' })}
+          fontIcon='bi-layers'
+        />
       </SidebarMenuItemWithSub>
-      {/* <div className='menu-item'>
-        <a
-          target='_blank'
-          className='menu-link'
-          href={process.env.REACT_APP_PREVIEW_DOCS_URL + '/docs/changelog'}
-        >
-          <span className='menu-icon'>
-            <KTIcon iconName='code' className='fs-2' />
-          </span>
-          <span className='menu-title'>Changelog {process.env.REACT_APP_VERSION}</span>
-        </a>
-      </div> */}
+
+      <SidebarMenuItemWithSub
+        to='/apps/albums'
+        title='Albums'
+        fontIcon='bi-chat-left'
+        icon='book'
+      >
+        <SidebarMenuItem to='/apps/albums/my-album' title='My Albums' hasBullet={true} />
+        <SidebarMenuItem to='/apps/albums/create-album' title='Create Albums' hasBullet={true} />
+        <SidebarMenuItem to='/apps/user-management/users' title='User management' hasBullet={true} />
+      </SidebarMenuItemWithSub>
     </>
   )
 }
 
-export {SidebarMenuMain}
+export { SidebarMenuMain }

@@ -17,11 +17,8 @@ const PrivateRoutes = () => {
   const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
   const SearchAssetsPage = lazy(() => import('../modules/apps/search-assets/SearchAssetsPage'))
   const EditAssetsPage = lazy(() => import('../modules/apps/search-assets/edit-assets/EditAssetsPage'))
-<<<<<<< HEAD
   const UploadAsset = lazy(() => import('../modules/apps/search-assets/upload-asset/uploadAsset'))
-=======
-  const UploadAssetsPage = lazy(() => import('../modules/apps/upload-assets/UploadAssetsPage'))
->>>>>>> 14c9680fb430c48b2a742ba1792ca793102822bc
+  const AlbumsPage = lazy(() => import('../modules/apps/albums/AlbumsPage'))
 
   return (
     <Routes>
@@ -98,11 +95,18 @@ const PrivateRoutes = () => {
           }
         />
         <Route
-<<<<<<< HEAD
           path='apps/upload-assets/*'
           element={
             <SuspensedView>
               <UploadAsset />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='apps/albums/*'
+          element={
+            <SuspensedView>
+              <AlbumsPage />
             </SuspensedView>
           }
         />
