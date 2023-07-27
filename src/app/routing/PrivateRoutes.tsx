@@ -17,6 +17,7 @@ const PrivateRoutes = () => {
   const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
   const SearchAssetsPage = lazy(() => import('../modules/apps/search-assets/SearchAssetsPage'))
   const EditAssetsPage = lazy(() => import('../modules/apps/search-assets/edit-assets/EditAssetsPage'))
+  const UploadAsset = lazy(() => import('../modules/apps/search-assets/upload-asset/uploadAsset'))
 
   return (
     <Routes>
@@ -89,6 +90,14 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <EditAssetsPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='apps/upload-assets/*'
+          element={
+            <SuspensedView>
+              <UploadAsset />
             </SuspensedView>
           }
         />
