@@ -1,4 +1,4 @@
-type items = {
+export type items = {
     index: number,
     title: string,
     url: string,

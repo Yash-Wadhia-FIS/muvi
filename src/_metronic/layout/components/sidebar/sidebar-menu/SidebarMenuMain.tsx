@@ -98,6 +98,7 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({id: 'MENU.SEARCH_ASSETS'})} hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({id: 'MENU.MY_ASSETS'})} hasBullet={true} />
         <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({id: 'MENU.UPLOAD_ASSETS'})} hasBullet={true} />
+
       </SidebarMenuItemWithSub>
       {/* <SidebarMenuItemWithSub
         to='/apps/chat'

@@ -1,9 +1,9 @@
 import React, { MouseEventHandler, useState } from "react";
-import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import {useSelector, shallowEqual} from 'react-redux';
 
-import { KTIcon, toAbsoluteUrl } from '../../../../../../_metronic/helpers'
-import { Dropdown1 } from "../../../../../../_metronic/partials";
+import { KTIcon } from '../../../../../../_metronic/helpers'
+import { RootState } from "../../../../../store";
 import { assetsItems } from "./items/_items";
 import { AssetsList } from "./items/AssetsList";
 
@@ -13,13 +13,16 @@ const itemsPerPage = 7;
 
 const AssetsTable = () => {
   const navigate = useNavigate();
+
+  const assets = useSelector((state: RootState) => state.assets.assets, shallowEqual);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [isGridView, setIsGridView] = useState(false);
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
 
-  const totalPages = Math.ceil(AssetsList.length / itemsPerPage);
+  const totalPages = Math.ceil(assets?.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = AssetsList.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = assets?.slice(startIndex, startIndex + itemsPerPage);
 
 
   const renderAssetsItems = () => {
@@ -29,7 +32,7 @@ const AssetsTable = () => {
 
     return (
       <>
-        {currentItems.map((data) =>
+        {currentItems.map((data: any) =>
           assetsItems(data, () => onEdit(data)))}
       </>
     )
