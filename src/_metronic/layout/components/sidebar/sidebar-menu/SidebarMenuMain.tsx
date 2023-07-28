@@ -119,12 +119,7 @@ const SidebarMenuMain = () => {
       >
         <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.GCP_SETTINGS' })} hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.AUDIT_LOGS' })} hasBullet={true} />
-        <SidebarMenuItem
-          to='/apps/user-management/users'
-          icon='abstract-28'
-          title={intl.formatMessage({ id: 'MENU.USER_MANAGEMENT' })}
-          fontIcon='bi-layers'
-        />
+        <SidebarMenuItem to='/apps/user-management/users' title='User management' hasBullet={true} />
       </SidebarMenuItemWithSub>
 
       <SidebarMenuItemWithSub
