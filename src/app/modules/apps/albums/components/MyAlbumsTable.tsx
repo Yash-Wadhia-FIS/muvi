@@ -18,7 +18,6 @@ const MyAlbumsTable = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isGridView, setIsGridView] = useState(false);
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
 
   const totalPages = Math.ceil(AlbumList?.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -27,7 +26,7 @@ const MyAlbumsTable = () => {
 
   const renderAssetsItems = () => {
     const onEdit = (data: any): void => {
-      navigate(`/apps/edit-assets/activity/${data?.index}`)
+        navigate('/apps/albums/edit-album');
     }
 
     return (
@@ -38,17 +37,9 @@ const MyAlbumsTable = () => {
     )
   }
 
-  const onGridEdit = (data: any): void => {
-    navigate(`/apps/edit-assets/activity/${data?.index}`)
-  }
-
-  const handleMouseEnter = (index: number) => {
-    setHoveredImage(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredImage(null);
-  };
+  const onAlbumSelected = () => {
+    navigate('/apps/albums/edit-album');
+}
 
   return (
     <div className='card card-xl-stretch mb-xl-8'>
@@ -86,7 +77,7 @@ const MyAlbumsTable = () => {
                   ></div>
                 </div>
                 <div className="d-flex justify-content-center mt-3 mb-5">
-                    <button className="btn btn-primary me-2" onClick={() => onGridEdit(data)}>Edit</button>
+                    <button className="btn btn-primary me-2" onClick={() => onAlbumSelected()}>Edit</button>
                     <button className="btn btn-secondary">Share</button>
                 </div>
               </div>
