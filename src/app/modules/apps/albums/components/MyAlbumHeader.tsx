@@ -37,7 +37,7 @@ const MyAlbumHeader = () => {
     )
 
     return (
-        <div className='card-header border-0 pt-6'>
+        <div className='card-header border-0 pt-'>
             <div className='card-title'>
                 {/* begin::Search */}
                 <div className='d-flex align-items-center position-relative my-1'>
@@ -50,9 +50,8 @@ const MyAlbumHeader = () => {
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <div className="col-md-5 m-7">
+                    <div className="col-md-5 m-7 d-inline-flex justify-content-start flex-row align-items-center">
                         {/* <label className='text-sm'>Start Date:</label> */}
-                        &nbsp;&nbsp;&nbsp;
                         <DatePicker
                             selected={startDate}
                             onChange={handleStartDateChange}
@@ -63,9 +62,8 @@ const MyAlbumHeader = () => {
                             className="form-control form-control-solid"
                         />
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-5 d-flex flex-row align-items-center">
                         {/* <label>End Date:</label> */}
-                        &nbsp;&nbsp;&nbsp;
                         <DatePicker
                             selected={endDate}
                             onChange={handleEndDateChange}
@@ -77,17 +75,15 @@ const MyAlbumHeader = () => {
                             className="form-control form-control-solid"
                         />
                     </div>
-                    <div>
-                        <button
-                            // disabled={isLoading}
-                            type='button'
-                            className='btn btn-primary me-3'
-                            data-kt-menu-trigger='click'
-                            data-kt-menu-placement='bottom-end'
-                        >
-                            Search
-                        </button>
-                    </div>
+                    <button
+                        // disabled={isLoading}
+                        type='button'
+                        className='btn btn-primary me-3'
+                        data-kt-menu-trigger='click'
+                        data-kt-menu-placement='bottom-end'
+                    >
+                        Search
+                    </button>
                 </div>
                 {/* end::Search */}
             </div>

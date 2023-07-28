@@ -50,7 +50,7 @@ const AssetsListSearchComponent = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div className="col-md-5 m-7">
-          <label>Start Date:</label>
+          {/* <label>Start Date:</label> */}
           &nbsp;&nbsp;&nbsp;
           <DatePicker
             selected={startDate}
@@ -63,7 +63,7 @@ const AssetsListSearchComponent = () => {
           />
         </div>
         <div className="col-md-5">
-          <label>End Date:</label>
+          {/* <label>End Date:</label> */}
           &nbsp;&nbsp;&nbsp;
           <DatePicker
             selected={endDate}
