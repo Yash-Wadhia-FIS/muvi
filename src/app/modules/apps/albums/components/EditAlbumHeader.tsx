@@ -15,7 +15,7 @@ const EditAlbumHeader = () => {
                             data-kt-menu-trigger='click'
                             data-kt-menu-placement='bottom-end'
                         >
-                            Edit
+                            Download
                         </button>
                         <button
                             // disabled={isLoading}

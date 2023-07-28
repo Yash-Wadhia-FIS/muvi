@@ -3,6 +3,7 @@ import { PageLink, PageTitle } from '../../../../_metronic/layout/core'
 import { useIntl } from 'react-intl'
 import { MyAlbums } from './components/MyAlbums';
 import { EditAlbums } from './components/EditAlbums';
+import { CreateAlbums } from './components/CreateAlbum';
 // import {AssetsHeader} from './UploadAssetsHeader';
 // import { UploadMetadata } from './components/UploadMetadata';
 // import { UploadSettings } from './components/UploadSettings';
@@ -48,7 +49,7 @@ const UploadAssetsPage = () => {
                     element={
                         <>
                             <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'ALBUMS.GENERAL.CREATE_ALBUMS' })}</PageTitle>
-                            {/* <UploadSettings /> */}
+                            <CreateAlbums />
                         </>
                     }
                 />

@@ -130,7 +130,6 @@ const SidebarMenuMain = () => {
       >
         <SidebarMenuItem to='/apps/albums/my-album' title='My Albums' hasBullet={true} />
         <SidebarMenuItem to='/apps/albums/create-album' title='Create Albums' hasBullet={true} />
-        <SidebarMenuItem to='/apps/user-management/users' title='User management' hasBullet={true} />
       </SidebarMenuItemWithSub>
     </>
   )
