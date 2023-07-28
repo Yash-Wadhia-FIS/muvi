@@ -26,7 +26,7 @@ const MyAlbumsTable = () => {
 
   const renderAssetsItems = () => {
     const onEdit = (data: any): void => {
-        navigate('/apps/albums/edit-album');
+        navigate(`/apps/albums/edit-album/${data?.index}`);
     }
 
     return (
@@ -37,8 +37,8 @@ const MyAlbumsTable = () => {
     )
   }
 
-  const onAlbumSelected = () => {
-    navigate('/apps/albums/edit-album');
+  const onAlbumSelected = (data: any): void => {
+    navigate(`/apps/albums/edit-album/${data?.index}`);
 }
 
   return (
@@ -77,7 +77,7 @@ const MyAlbumsTable = () => {
                   ></div>
                 </div>
                 <div className="d-flex justify-content-center mt-3 mb-5">
-                    <button className="btn btn-primary me-2" onClick={() => onAlbumSelected()}>Edit</button>
+                    <button className="btn btn-primary me-2" onClick={() => onAlbumSelected(data)}>Edit</button>
                     <button className="btn btn-secondary">Share</button>
                 </div>
               </div>

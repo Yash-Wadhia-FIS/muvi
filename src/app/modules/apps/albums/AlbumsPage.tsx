@@ -53,7 +53,7 @@ const UploadAssetsPage = () => {
                     }
                 />
                 <Route
-                    path='edit-album'
+                    path='edit-album/:id'
                     element={
                         <>
                             <PageTitle breadcrumbs={usersBreadcrumbs}>{intl.formatMessage({ id: 'ALBUMS.GENERAL.EDIT_ALBUMS' })}</PageTitle>

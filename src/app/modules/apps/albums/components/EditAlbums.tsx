@@ -1,17 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { ChangeEvent, useState } from 'react'
-import { Overlay, Popover } from 'react-bootstrap'
+import {useParams} from 'react-router';
 
 import LazyImage from './image-item/LazyImage'
 import { data } from './image-item/ImageData';
 
 import { KTCard } from '../../../../../_metronic/helpers'
+import { KTIcon } from '../../../../../_metronic/helpers'
+import { EditAlbumHeader } from './EditAlbumHeader';
+import { AlbumList } from "../items/AlbumList";
 
 import '../css/EditAlbums.css'
-import { EditAlbumHeader } from './EditAlbumHeader';
 
 
 const EditAlbums: React.FC = () => {
+    const params = useParams();
+
+    const {id} = params as any;
     const [checkBoxes, setCheckBoxes] = useState({
         checkbox1: false,
         checkbox2: false,
@@ -27,10 +32,18 @@ const EditAlbums: React.FC = () => {
 
     const handleCheckBoxChange = (name: string) => (event: ChangeEvent<HTMLInputElement>) => {
         setCheckBoxes({ ...checkBoxes, [name]: event.target.checked });
-      };
+    };
 
     return (
         <KTCard>
+            <div className='card-header border-0 d-flex align-items-center mb-5'>
+                <div className='d-inline-flex flex-row'>
+                <h1 className='fs-1 pt-2'>{AlbumList[id].title}</h1>
+                <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary ms-3' style={{ 'marginRight': 7 }}>
+                    <KTIcon iconName='pencil' className='fs-2' />
+                </button>
+                </div>
+            </div>
             {isAnyCheckBoxChecked() && <EditAlbumHeader />}
             <div className="cont-bg" style={{height: '80vh', overflow: 'auto'}}>
                 <div className="cont-main">
