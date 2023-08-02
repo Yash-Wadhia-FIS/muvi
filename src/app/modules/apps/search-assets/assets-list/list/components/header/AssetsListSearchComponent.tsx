@@ -37,58 +37,108 @@ const AssetsListSearchComponent = () => {
   )
 
   return (
-    <div className='card-title'>
-      {/* begin::Search */}
-      <div className='d-flex align-items-center position-relative my-1'>
-        <KTIcon iconName='magnifier' className='fs-1 position-absolute ms-6' />
-        <input
-          type='text'
-          data-kt-user-table-filter='search'
-          className='form-control form-control-solid w-250px ps-14'
-          placeholder='Search metadata'
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <div className="col-md-5 m-7">
-          {/* <label>Start Date:</label> */}
-          &nbsp;&nbsp;&nbsp;
-          <DatePicker
-            selected={startDate}
-            onChange={handleStartDateChange}
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-            placeholderText="Start Date"
-            className="form-control form-control-solid"
-          />
+
+    <div className={`card mb-5 mb-xl-8`}>
+      {/* end::Header */}
+      {/* begin::Body */}
+      <div className='card-body py-3'>
+        {/* begin::Table container */}
+        <div className='table-responsive'>
+          {/* begin::Table */}
+          <table className='table table-row-gray-300 align-middle gs-0 gy-4'>
+            {/* begin::Table head */}
+            <thead>
+              <tr className='fw-bold text-muted'>
+                <th className='w-25px'>
+                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
+                    <input
+                      className='form-check-input'
+                      type='checkbox'
+                      value='1'
+                      data-kt-check='true'
+                      data-kt-check-target='.widget-9-check'
+                    />
+                  </div>
+                </th>
+                <th className='min-w-150px'></th>
+                <th className='min-w-140px'></th>
+                <th className='min-w-120px'></th>
+                <th className='min-w-100px text-end'></th>
+              </tr>
+            </thead>
+            {/* end::Table head */}
+            {/* begin::Table body */}
+            <tbody>
+              <tr>
+                <td>
+                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
+                    {/* <input className='form-check-input widget-9-check' type='checkbox' value='1' /> */}
+                  </div>
+                </td>
+                <td>
+                  <div className='d-inline-flex align-items-center'>
+                    <KTIcon iconName='magnifier' className='fs-1 position-absolute ms-6' />
+                    <input
+                      type='text'
+                      data-kt-user-table-filter='search'
+                      className='form-control form-control-solid w-250px ps-14'
+                      placeholder='Search albums'
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div className='d-flex align-items-center'>
+                      <DatePicker
+                        selected={startDate}
+                        onChange={handleStartDateChange}
+                        selectsStart
+                        startDate={startDate}
+                        endDate={endDate}
+                        placeholderText="Start Date"
+                        className="form-control form-control-solid"
+                      />
+                    <div className='d-flex justify-content-start ms-4'>
+                      <DatePicker
+                        selected={endDate}
+                        onChange={handleEndDateChange}
+                        selectsEnd
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={startDate}
+                        placeholderText="End Date"
+                        className="form-control form-control-solid"
+                      />
+                    </div>
+                  </div>
+                </td>
+                <td className='text-end'>
+                  <div className='d-flex flex-column w-100 me-2'>
+                  </div>
+                </td>
+                <td>
+                  <div className='d-flex justify-content-end flex-shrink-0'>
+                    <button
+                      // disabled={isLoading}
+                      type='button'
+                      className='btn btn-primary me-3'
+                      data-kt-menu-trigger='click'
+                      data-kt-menu-placement='bottom-end'
+                    >
+                      Search
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            {/* end::Table body */}
+          </table>
+          {/* end::Table */}
         </div>
-        <div className="col-md-5">
-          {/* <label>End Date:</label> */}
-          &nbsp;&nbsp;&nbsp;
-          <DatePicker
-            selected={endDate}
-            onChange={handleEndDateChange}
-            selectsEnd
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
-            placeholderText="End Date"
-            className="form-control form-control-solid"
-          />
-        </div>
-        <div>
-          <button
-            // disabled={isLoading}
-            type='button'
-            className='btn btn-primary me-3'
-            data-kt-menu-trigger='click'
-            data-kt-menu-placement='bottom-end'
-          >
-            Search
-          </button>
-        </div>
+        {/* end::Table container */}
       </div>
-      {/* end::Search */}
+      {/* begin::Body */}
     </div>
   )
 }

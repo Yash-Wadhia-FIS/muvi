@@ -12,8 +12,8 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1'>Members Statistics</span>
-          <span className='text-muted mt-1 fw-semibold fs-7'>Over 500 members</span>
+          <span className='card-label fw-bold fs-3 mb-1'>Tasks management</span>
+          {/* <span className='text-muted mt-1 fw-semibold fs-7'>Over 500 members</span> */}
         </h3>
         <div
           className='card-toolbar'
@@ -54,8 +54,8 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                     />
                   </div>
                 </th>
-                <th className='min-w-150px'>Authors</th>
-                <th className='min-w-140px'>Company</th>
+                <th className='min-w-150px'>Members</th>
+                <th className='min-w-140px'>Tasks</th>
                 <th className='min-w-120px'>Progress</th>
                 <th className='min-w-100px text-end'>Actions</th>
               </tr>
@@ -78,9 +78,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                       <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
                         Ana Simmons
                       </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        HTML, JS, ReactJS
-                      </span>
+                      {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                        Admin
+                      </span> */}
                     </div>
                   </div>
                 </td>
@@ -88,9 +88,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block fs-6'>
                     Intertico
                   </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                  {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                     Web, UI/UX Design
-                  </span>
+                  </span> */}
                 </td>
                 <td className='text-end'>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -144,9 +144,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                       <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
                         Jessie Clarcson
                       </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                      {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                         C#, ASP.NET, MS SQL
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </td>
@@ -154,9 +154,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block fs-6'>
                     Agoda
                   </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                  {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                     Houses &amp; Hotels
-                  </span>
+                  </span> */}
                 </td>
                 <td className='text-end'>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -210,9 +210,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                       <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
                         Lebron Wayde
                       </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                      {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                         PHP, Laravel, VueJS
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </td>
@@ -220,9 +220,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block fs-6'>
                     RoadGee
                   </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                  {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                     Transportation
-                  </span>
+                  </span> */}
                 </td>
                 <td className='text-end'>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -276,9 +276,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                       <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
                         Natali Goodwin
                       </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                      {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                         Python, PostgreSQL, ReactJS
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </td>
@@ -286,7 +286,7 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block fs-6'>
                     The Hill
                   </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>Insurance</span>
+                  {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>Insurance</span> */}
                 </td>
                 <td className='text-end'>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -340,9 +340,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                       <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
                         Kevin Leonard
                       </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                      {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                         HTML, JS, ReactJS
-                      </span>
+                      </span> */}
                     </div>
                   </div>
                 </td>
@@ -350,9 +350,9 @@ const TablesWidget10: React.FC<Props> = ({className}) => {
                   <a href='#' className='text-dark fw-bold text-hover-primary d-block fs-6'>
                     RoadGee
                   </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
+                  {/* <span className='text-muted fw-semibold text-muted d-block fs-7'>
                     Art Director
-                  </span>
+                  </span> */}
                 </td>
                 <td className='text-end'>
                   <div className='d-flex flex-column w-100 me-2'>

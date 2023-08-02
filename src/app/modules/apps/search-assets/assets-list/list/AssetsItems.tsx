@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {useSelector, shallowEqual} from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 
 import { KTIcon } from '../../../../../../_metronic/helpers'
 import { RootState } from "../../../../../store";
@@ -78,16 +78,29 @@ const AssetsTable = () => {
         <div className="container mt-4">
           <div className="row">
             {AssetsList.map((data, index) => (
-              <div key={index} className="col-md-3 mb-4">
-                <div className='symbol symbol-160px symbol-2by3 me-4 d-flex justify-content-center'>
-                  <div
-                    className='symbol-label'
-                    style={{ backgroundImage: `url(${data.url})` }}
-                  ></div>
-                </div>
-                <div className="d-flex justify-content-center mt-3 mb-5">
-                    <button className="btn btn-primary me-2" onClick={() => onGridEdit(data)}>Edit</button>
-                    <button className="btn btn-secondary">Share</button>
+              <div className="col-lg-4">
+                <div className="card">
+                  <img
+                    src={`${data.url}`}
+                    className="card-img-top"
+                    alt="Waterfall"
+                    height={270}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{data.title}</h5>
+                    {/* <p className="card-text">
+                      Some quick example text to build on the card title and make up the bulk
+                      of the card's content.
+                    </p> */}
+                    {data.metaData.map((meta) => (
+                      <span className='badge badge-light-info fw-semibold me-1'>{meta}</span>
+                    ))}
+                    <div className="d-flex justify-content-center mt-3 mb-5">
+                      <button className="btn btn-primary me-2" onClick={() => onGridEdit(data)}>Edit</button>
+                      <button className="btn btn-primary me-2">Download</button>
+                      <button className="btn btn-secondary me-2">Share</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

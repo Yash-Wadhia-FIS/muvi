@@ -38,6 +38,9 @@ const albumItems = ({title, url, files, status, index, date, metaData}: items, o
                 <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary' style={{ 'marginRight': 7 }} onClick={() => onEdit()}>
                     <KTIcon iconName='pencil' className='fs-2' />
                 </button>
+                <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary mr-4 mr-5' style={{ 'marginRight': 7 }}>
+                    <KTIcon iconName='cloud-download' className='fs-2' />
+                </button>
                 <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary mr-4 mr-5'>
                     <KTIcon iconName='share' className='fs-2' />
                 </button>

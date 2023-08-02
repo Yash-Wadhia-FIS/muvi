@@ -70,7 +70,7 @@ const ListsWidget3: React.FC<Props> = ({className}) => {
             <span className='text-muted fw-semibold d-block'>Due in 3 Days</span>
           </div>
           {/* end::Description */}
-          <span className='badge badge-light-primary fs-8 fw-bold'>New</span>
+          <span className='badge badge-light-primary fs-8 fw-bold'>In progress</span>
         </div>
         {/* end:Item */}
         {/* begin::Item */}
@@ -91,7 +91,7 @@ const ListsWidget3: React.FC<Props> = ({className}) => {
             <span className='text-muted fw-semibold d-block'>Due in 5 Days</span>
           </div>
           {/* end::Description */}
-          <span className='badge badge-light-warning fs-8 fw-bold'>New</span>
+          <span className='badge badge-light-success fs-8 fw-bold'>New</span>
         </div>
         {/* end:Item */}
         {/* begin::Item */}
@@ -112,7 +112,7 @@ const ListsWidget3: React.FC<Props> = ({className}) => {
             <span className='text-muted fw-semibold d-block'>Due in 2 Days</span>
           </div>
           {/* end::Description */}
-          <span className='badge badge-light-primary fs-8 fw-bold'>New</span>
+          <span className='badge badge-light-primary fs-8 fw-bold'>In progress</span>
         </div>
         {/* end:Item */}
         {/* begin::Item */}
@@ -133,7 +133,7 @@ const ListsWidget3: React.FC<Props> = ({className}) => {
             <span className='text-muted fw-semibold d-block'>Due in 12 Days</span>
           </div>
           {/* end::Description */}
-          <span className='badge badge-light-danger fs-8 fw-bold'>New</span>
+          <span className='badge badge-light-danger fs-8 fw-bold'>Pending</span>
         </div>
         {/* end:Item */}
         {/* begin::Item */}

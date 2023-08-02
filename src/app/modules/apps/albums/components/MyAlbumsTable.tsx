@@ -50,7 +50,7 @@ const MyAlbumsTable = () => {
         </h3>
         <div className='card-toolbar'>
           {/* begin::Menu */}
-          <button
+          {/* <button
             type='button'
             className='btn btn-sm btn-icon btn-color-primary btn-active-light-primary'
             data-kt-menu-trigger='click'
@@ -59,7 +59,7 @@ const MyAlbumsTable = () => {
             onClick={() => setIsGridView(!isGridView)}
           >
             <KTIcon iconName='category' className='fs-2' />
-          </button>
+          </button> */}
           {/* end::Menu */}
         </div>
       </div>
