@@ -144,7 +144,7 @@ const ProfileHeader: React.FC = () => {
                 }
                 to={`/apps/edit-assets/settings/${id}`}
               >
-                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACTIVITY'})}
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}
               </Link>
             </li>
           </ul>

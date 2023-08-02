@@ -14,7 +14,7 @@ const UploadAssetsPage = () => {
     const usersBreadcrumbs: Array<PageLink> = [
         {
             title: intl.formatMessage({ id: 'ALBUMS.GENERAL.ALBUMS' }),
-            path: 'my-album',
+            path: 'apps/albums/my-album',
             isSeparator: false,
             isActive: false,
         },

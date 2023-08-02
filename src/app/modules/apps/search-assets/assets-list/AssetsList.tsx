@@ -3,8 +3,6 @@ import AssetsTable from './list/AssetsItems'
 import { AssetsListHeader } from './list/components/header/AssetsListHeader'
 
 const AssetsList = () => {
-//   const {itemIdForUpdate} = useListView()
-console.log('hihi')
   return (
     <>
       <KTCard>

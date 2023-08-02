@@ -38,7 +38,7 @@ const MyAlbumHeader = () => {
     )
 
     return (
-        <div className={`card mb-5 mb-xl-8`}>
+        <div className={`card`}>
             {/* end::Header */}
             {/* begin::Body */}
             <div className='card-body py-3'>
@@ -77,15 +77,15 @@ const MyAlbumHeader = () => {
                                 </td>
                                 <td>
                                     <div className='d-inline-flex align-items-center'>
-                                            <KTIcon iconName='magnifier' className='fs-1 position-absolute ms-6' />
-                                            <input
-                                                type='text'
-                                                data-kt-user-table-filter='search'
-                                                className='form-control form-control-solid w-250px ps-14'
-                                                placeholder='Search albums'
-                                                value={searchTerm}
-                                                onChange={(e) => setSearchTerm(e.target.value)}
-                                            />
+                                        <KTIcon iconName='magnifier' className='fs-1 position-absolute ms-6' />
+                                        <input
+                                            type='text'
+                                            data-kt-user-table-filter='search'
+                                            className='form-control form-control-solid w-250px ps-14'
+                                            placeholder='Search albums'
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                        />
                                     </div>
                                 </td>
                                 <td>
@@ -97,7 +97,7 @@ const MyAlbumHeader = () => {
                                                 selectsStart
                                                 startDate={startDate}
                                                 endDate={endDate}
-                                                placeholderText="Start Date"
+                                                placeholderText="From Date"
                                                 className="form-control form-control-solid"
                                             />
                                         </div>
@@ -109,7 +109,7 @@ const MyAlbumHeader = () => {
                                                 startDate={startDate}
                                                 endDate={endDate}
                                                 minDate={startDate}
-                                                placeholderText="End Date"
+                                                placeholderText="To Date"
                                                 className="form-control form-control-solid"
                                             />
                                         </div>

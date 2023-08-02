@@ -38,27 +38,18 @@ const AssetsListSearchComponent = () => {
 
   return (
 
-    <div className={`card mb-5 mb-xl-8`}>
+    <div className={`card`}>
       {/* end::Header */}
       {/* begin::Body */}
       <div className='card-body py-3'>
         {/* begin::Table container */}
         <div className='table-responsive'>
           {/* begin::Table */}
-          <table className='table table-row-gray-300 align-middle gs-0 gy-4'>
+          <table className='table table-row-gray-300 align-middle gs-0'>
             {/* begin::Table head */}
             <thead>
               <tr className='fw-bold text-muted'>
                 <th className='w-25px'>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input
-                      className='form-check-input'
-                      type='checkbox'
-                      value='1'
-                      data-kt-check='true'
-                      data-kt-check-target='.widget-9-check'
-                    />
-                  </div>
                 </th>
                 <th className='min-w-150px'></th>
                 <th className='min-w-140px'></th>
@@ -96,7 +87,7 @@ const AssetsListSearchComponent = () => {
                         selectsStart
                         startDate={startDate}
                         endDate={endDate}
-                        placeholderText="Start Date"
+                        placeholderText="From Date"
                         className="form-control form-control-solid"
                       />
                     <div className='d-flex justify-content-start ms-4'>
@@ -107,7 +98,7 @@ const AssetsListSearchComponent = () => {
                         startDate={startDate}
                         endDate={endDate}
                         minDate={startDate}
-                        placeholderText="End Date"
+                        placeholderText="To Date"
                         className="form-control form-control-solid"
                       />
                     </div>

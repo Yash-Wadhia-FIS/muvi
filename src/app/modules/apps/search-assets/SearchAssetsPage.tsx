@@ -10,7 +10,7 @@ const SearchAssetsPage = () => {
   const usersBreadcrumbs: Array<PageLink> = [
     {
       title: intl.formatMessage({id: 'MENU.ASSETS'}),
-      path: '/apps/assets/search-assets',
+      path: '/apps/assets/search-assets/assets',
       isSeparator: false,
       isActive: false,
     },

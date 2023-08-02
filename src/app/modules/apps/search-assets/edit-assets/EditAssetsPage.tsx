@@ -11,10 +11,10 @@ import { useIntl } from 'react-intl'
 const EditAssets = () => {
   const intl = useIntl();
 
-  const profileBreadCrumbs: Array<PageLink> = [
+  const editAssetsBreadCrumbs: Array<PageLink> = [
     {
       title: intl.formatMessage({id: 'MENU.ASSETS'}),
-      path: 'activity',
+      path: '/apps/assets/search-assets/assets',
       isSeparator: false,
       isActive: false,
     },
@@ -41,7 +41,7 @@ const EditAssets = () => {
           path='activity/:id'
           element={
             <>
-              <PageTitle breadcrumbs={profileBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACTIVITY'})}</PageTitle>
+              <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACTIVITY'})}</PageTitle>
               <Activity />
             </>
           }
@@ -50,7 +50,7 @@ const EditAssets = () => {
           path='access-control/:id'
           element={
             <>
-              <PageTitle breadcrumbs={profileBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACCESS_CONTROL'})}</PageTitle>
+              <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ACCESS_CONTROL'})}</PageTitle>
               <AccessControl />
             </>
           }
@@ -59,7 +59,7 @@ const EditAssets = () => {
           path='metadata/:id'
           element={
             <>
-              <PageTitle breadcrumbs={profileBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.METADATA'})}</PageTitle>
+              <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.METADATA'})}</PageTitle>
               <Metadata />
             </>
           }
@@ -68,7 +68,7 @@ const EditAssets = () => {
           path='settings/:id'
           element={
             <>
-              <PageTitle breadcrumbs={profileBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}</PageTitle>
+              <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}</PageTitle>
               <Settings />
             </>
           }
