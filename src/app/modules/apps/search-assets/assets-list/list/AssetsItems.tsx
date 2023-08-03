@@ -8,6 +8,7 @@ import { assetsItems } from "./items/_items";
 import { AssetsList } from "./items/AssetsList";
 
 import '../../css/AssetsItems.css'
+import { ImageModal } from "../../../../../../_metronic/partials/modals/image-modal/ImageModal";
 
 const itemsPerPage = 7;
 
@@ -19,6 +20,8 @@ const AssetsTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isGridView, setIsGridView] = useState(false);
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+  const [openImage, setOpenImage] = useState<boolean>(false);
+  const [openImageURL, setOpenImageURL] = useState<string>('');
 
   const totalPages = Math.ceil(assets?.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -30,16 +33,26 @@ const AssetsTable = () => {
       navigate(`/apps/edit-assets/activity/${data?.index}`)
     }
 
+    const onOpenImage = (data: any) => {
+      setOpenImage(true);
+      setOpenImageURL(data?.url);
+    }
+
     return (
       <>
         {currentItems.map((data: any) =>
-          assetsItems(data, () => onEdit(data)))}
+          assetsItems(data, () => onEdit(data), () => onOpenImage(data)))}
       </>
     )
   }
 
   const onGridEdit = (data: any): void => {
     navigate(`/apps/edit-assets/activity/${data?.index}`)
+  }
+
+  const onGridOpenImage = (data: any) => {
+    setOpenImage(true);
+    setOpenImageURL(data?.url);
   }
 
   const handleMouseEnter = (index: number) => {
@@ -79,10 +92,10 @@ const AssetsTable = () => {
           <div className="row">
             {AssetsList.map((data, index) => (
               <div className="col-lg-4">
-                <div className="card">
+                <div className="card" onClick={() => onGridOpenImage(data)}>
                   <img
                     src={`${data.url}`}
-                    className="card-img-top"
+                    className="card-img-top image cursor-pointer"
                     alt="Waterfall"
                     height={270}
                   />
@@ -137,6 +150,7 @@ const AssetsTable = () => {
           </div>
         </div>}
       {/* end::Body */}
+      <ImageModal onHide={() => setOpenImage(false)} show={openImage} imgURL={openImageURL} />
     </div>
   )
 }

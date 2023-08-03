@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useLocation, useParams} from 'react-router-dom'
 import { AssetsList } from '../assets-list/list/items/AssetsList';
 import { useIntl } from 'react-intl';
@@ -7,6 +7,8 @@ import {useSelector, shallowEqual} from 'react-redux';
 
 import {KTIcon} from '../../../../../_metronic/helpers'
 import { RootState } from '../../../../store';
+import { ImageModal } from '../../../../../_metronic/partials/modals/image-modal/ImageModal';
+import "../css/EditAssetsHeader.css";
 
 interface LocationAssetsState {
   index: number;
@@ -24,16 +26,24 @@ const ProfileHeader: React.FC = () => {
   const intl = useIntl();
 
   const assets = useSelector((state: RootState) => state.assets.assets, shallowEqual);
+
+  const [openImage, setOpenImage] = useState<boolean>(false);
+  const [openImageURL, setOpenImageURL] = useState<string>('');
   
   const {id} = params as any;
   const {index} = location.state as LocationAssetsState ?? {index: 0};
+
+  const onOpenImage = () => {
+    setOpenImage(true);
+    setOpenImageURL(assets[id].url);
+  };
 
   return (
     <div className='card mb-5 mb-xl-10'>
       <div className='card-body pt-9 pb-0'>
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
-            <div className=''>
+            <div className='image cursor-pointer' onClick={onOpenImage}>
               <img src={assets[id].url} alt='mamai' height={190} width={300} className='rounded'/>
             </div>
           </div>
@@ -150,6 +160,7 @@ const ProfileHeader: React.FC = () => {
           </ul>
         </div>
       </div>
+      <ImageModal onHide={() => setOpenImage(false)} show={openImage} imgURL={openImageURL} />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, {MouseEventHandler} from "react";
 
 import { KTIcon } from "../../../../../../../_metronic/helpers";
-import { toAbsoluteUrl } from "../../../../../../../_metronic/helpers";
+import "../../../css/_items.css"
 
 type items = {
     title: string,
@@ -13,13 +13,13 @@ type items = {
     metaData: Array<string>
 };
 
-const assetsItems = ({title, url, size, status, index, date, metaData}: items, onEdit: () => void) => {
+const assetsItems = ({title, url, size, status, index, date, metaData}: items, onEdit: () => void, onOpenImage: () => void) => {
 
     return (
         <tr key={index}>
             <td>
-                <div className='symbol symbol-50px me-2'>
-                    <div className='symbol-label' style={{ backgroundImage: `url(${url})` }}>
+                <div className='symbol symbol-50px me-2 cursor-pointer' onClick={onOpenImage}>
+                    <div className='symbol-label image' style={{ backgroundImage: `url(${url})` }}>
                     </div>
                 </div>
             </td>
