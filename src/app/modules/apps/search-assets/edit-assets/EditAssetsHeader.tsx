@@ -157,6 +157,17 @@ const ProfileHeader: React.FC = () => {
                 {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link
+                className={
+                  `nav-link text-active-primary me-6 ` +
+                  (location.pathname === `/apps/edit-assets/albums/${id}` && 'active')
+                }
+                to={`/apps/edit-assets/albums/${id}`}
+              >
+                {intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ALBUMS'})}
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

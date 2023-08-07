@@ -1,11 +1,13 @@
 import {Navigate, Routes, Route, Outlet} from 'react-router-dom'
+import { useIntl } from 'react-intl'
+
 import {PageLink, PageTitle} from '../../../../../_metronic/layout/core'
 import {Activity} from './components/Activity'
 import {AccessControl} from './components/AccessControl'
 import {Metadata} from './components/Metadata'
 import {Settings} from './components/Settings'
+import { Albums } from './components/Albums'
 import {ProfileHeader} from './EditAssetsHeader'
-import { useIntl } from 'react-intl'
 
 
 const EditAssets = () => {
@@ -70,6 +72,15 @@ const EditAssets = () => {
             <>
               <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.SETTINGS'})}</PageTitle>
               <Settings />
+            </>
+          }
+        />
+        <Route
+          path='albums/:id'
+          element={
+            <>
+              <PageTitle breadcrumbs={editAssetsBreadCrumbs}>{intl.formatMessage({id: 'ASSETS.EDIT_ASSETS.ALBUMS'})}</PageTitle>
+              <Albums />
             </>
           }
         />
