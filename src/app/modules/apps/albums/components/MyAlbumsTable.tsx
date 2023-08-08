@@ -49,18 +49,6 @@ const MyAlbumsTable = () => {
           <span className='fw-bold text-dark'>Recent Search Albums</span>
         </h3>
         <div className='card-toolbar'>
-          {/* begin::Menu */}
-          {/* <button
-            type='button'
-            className='btn btn-sm btn-icon btn-color-primary btn-active-light-primary'
-            data-kt-menu-trigger='click'
-            data-kt-menu-placement='bottom-end'
-            data-kt-menu-flip='top-end'
-            onClick={() => setIsGridView(!isGridView)}
-          >
-            <KTIcon iconName='category' className='fs-2' />
-          </button> */}
-          {/* end::Menu */}
         </div>
       </div>
       {/* end::Header */}

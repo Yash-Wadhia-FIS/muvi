@@ -1,14 +1,15 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, shallowEqual } from 'react-redux';
+import { useTable, useSortBy, Column } from 'react-table';
 
 import { KTIcon } from '../../../../../../_metronic/helpers'
 import { RootState } from "../../../../../store";
 import { assetsItems } from "./items/_items";
 import { AssetsList } from "./items/AssetsList";
+import { ImageModal } from "../../../../../../_metronic/partials/modals/image-modal/ImageModal";
 
 import '../../css/AssetsItems.css'
-import { ImageModal } from "../../../../../../_metronic/partials/modals/image-modal/ImageModal";
 
 const itemsPerPage = 7;
 
@@ -27,23 +28,106 @@ const AssetsTable = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = assets?.slice(startIndex, startIndex + itemsPerPage);
 
+  const columns = useMemo<any>(() => [
+    {
+      Header: <span className="p-0 min-w-50px"></span>,
+      accessor: "url",
+      Cell: ({ ...props }) => {
+        return (
+          <div className='d-flex align-items-center'>
+            <div className='symbol symbol-50px me-2 cursor-pointer' onClick={() => onOpenImage(props.value)}>
+              <div className='symbol-label image' style={{ backgroundImage: `url(${props.value})` }}>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    },
+    {
+      Header: () => <span className="p-0 min-w-100px">Album name</span>,
+      accessor: "title",
+      Cell: ({ ...props }) => {
+        return (
+          <div className='d-flex align-items-center'>
+            <div className='d-flex justify-content-start flex-column'>
+              <a href='#' className='text-dark fw-bold text-hover-primary fs-6'>
+                {props.value}
+              </a>
+            </div>
+          </div>
+        )
+      }
+    },
+    {
+      Header: () => <span className="p-0 min-w-100px">Metadata</span>,
+      accessor: "metaData",
+      Cell: ({ ...props }) => {
+        return (
+          <>
+            {props.value?.map((meta: string) => (
+              <span className='badge badge-light-info fw-semibold me-1'>{meta}</span>
+            ))}
+          </>
+        )
+      }
+    },
+    {
+      Header: () => <span className="p-0 min-w-125px">Last updated</span>,
+      accessor: "date",
+      Cell: ({ ...props }) => {
+        return (
+          <span className='text-muted fw-semibold'>{props.value}</span>
+        )
+      }
+    },
+    {
+      Header: () => (
+        <div className="text-end">
+          <span className="p-0 min-w-40px text-end">Actions</span>
+        </div>
+      ),
+      accessor: "actions",
+      Cell: ({ ...props }) => {
+        return (
+          <div className="text-end">
+            <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary' style={{ 'marginRight': 7 }} onClick={() => onEdit(props.row.id)}>
+              <KTIcon iconName='pencil' className='fs-2' />
+            </button>
+            <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary mr-4 mr-5' style={{ 'marginRight': 7 }}>
+              <KTIcon iconName='cloud-download' className='fs-2' />
+            </button>
+            <button className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary mr-4 mr-5'>
+              <KTIcon iconName='share' className='fs-2' />
+            </button>
+          </div>
+        )
+      }
+    },
+  ], []);
 
-  const renderAssetsItems = () => {
-    const onEdit = (data: any): void => {
-      navigate(`/apps/edit-assets/activity/${data?.index}`)
-    }
+  const data = useMemo(() => AssetsList, []);
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
-    const onOpenImage = (data: any) => {
-      setOpenImage(true);
-      setOpenImageURL(data?.url);
-    }
+  const onOpenImage = (url: any) => {
+    setOpenImage(true);
+    setOpenImageURL(url);
+  }
 
-    return (
-      <>
-        {currentItems.map((data: any) =>
-          assetsItems(data, () => onEdit(data), () => onOpenImage(data)))}
-      </>
-    )
+
+  const onEdit = (index: any): void => {
+    navigate(`/apps/edit-assets/activity/${index}`)
   }
 
   const onGridEdit = (data: any): void => {
@@ -120,18 +204,34 @@ const AssetsTable = () => {
           </div>
         </div> :
         <div className='card-body pt-3'>
-          <table className='table align-middle gs-0 gy-5'>
+          <table className='table align-middle gs-0 gy-5' {...getTableProps()}>
             <thead>
-              <tr>
-                <th className='p-0 w-50px'></th>
-                <th className='p-0 min-w-100px'></th>
-                <th className='p-0 min-w-100px'></th>
-                <th className='p-0 min-w-125px'></th>
-                <th className='p-0 min-w-40px'></th>
-              </tr>
+              {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map((column: any) => {
+                      return (
+                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                          {column.render('Header')}
+                          <span>
+                            {column.isSorted ? (column.isSortedDesc ? <KTIcon iconName="down" className="ml-2" /> : <KTIcon iconName="up" className="ml-2" />) : ''}
+                          </span>
+                        </th>
+                      )
+                    })}
+                  </tr>
+                ))}
             </thead>
-            <tbody>
-              {renderAssetsItems()}
+            <tbody {...getTableBodyProps()}>
+              {rows.map(row => {
+                prepareRow(row);
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map(cell => {
+                      return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                    })}
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
 

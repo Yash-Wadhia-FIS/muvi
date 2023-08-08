@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useTable, useSortBy, Column } from 'react-table';
 
 import { KTIcon } from '../../../../../../_metronic/helpers'
 import { AlbumList } from '../../../albums/items/AlbumList'
-import { UserActionsCell } from '../albums/columns/UserActionsCell';
 
 export function Albums() {
-  const columns = React.useMemo<any>(
+  const columns = useMemo<any>(
     () => [
       {
         Header: "Album name",
@@ -66,7 +65,7 @@ export function Albums() {
     []
   );
 
-  const data = React.useMemo(() => AlbumList, []);
+  const data = useMemo(() => AlbumList, []);
   const {
     getTableProps,
     getTableBodyProps,
@@ -130,7 +129,7 @@ export function Albums() {
                         <th {...column.getHeaderProps(column.getSortByToggleProps())} className={getHeaderClass(column.Header)}>
                           {column.render('Header')}
                           <span>
-                            {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                            {column.isSorted ? (column.isSortedDesc ? <KTIcon iconName="down" className="ml-2" /> : <KTIcon iconName="up" className="ml-2" />) : ''}
                           </span>
                         </th>
                       )
