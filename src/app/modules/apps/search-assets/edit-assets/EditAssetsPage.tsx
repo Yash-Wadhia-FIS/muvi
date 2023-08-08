@@ -8,6 +8,7 @@ import {Metadata} from './components/Metadata'
 import {Settings} from './components/Settings'
 import { Albums } from './components/Albums'
 import {ProfileHeader} from './EditAssetsHeader'
+import { AlbumsTable } from './albums/AlbumsTable'
 
 
 const EditAssets = () => {
