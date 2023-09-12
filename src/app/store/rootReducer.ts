@@ -1,15 +1,9 @@
-import { combineReducers, Reducer } from 'redux';
+import { combineReducers } from "redux";
+import cartReducer from "./cart/cart.slice";
+const rootReducer = combineReducers({
+  cart: cartReducer,
+});
 
-export interface RootState {
-  // Define the state shape of your root reducer here
-  // For example:
-  // someReducer: SomeState;
-}
-
-const rootReducer = (asyncReducers: Record<string, Reducer>) => {
-  return combineReducers<RootState>({
-    ...asyncReducers,
-  });
-};
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;

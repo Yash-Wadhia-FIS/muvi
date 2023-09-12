@@ -88,18 +88,130 @@ const SidebarMenuMain = () => {
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.DASHBOARD' })}</span>
         </div>
       </div>
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.DASHBOARD.OVERVIEW' })} icon='chart-pie-4' />
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.DASHBOARD.STATISTICS' })} icon='chart-line-up' />
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.MOVIES' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.MOVIES.MANAGE' })}
+        fontIcon='bi-chat-left'
+        icon='youtube'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.MANAGE.LIST_MOVIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.MOVIES.MANAGE.ADD_MOVIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.MANAGE.EDIT_MOVIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.MANAGE.DELETE_MOVIES' })} hasBullet={true} />
+
+      </SidebarMenuItemWithSub>
+      
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.MOVIES.CATEGORIES' })}
+        fontIcon='bi-chat-left'
+        icon='category'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.CATEGORIES.LIST_CATEGORIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.MOVIES.CATEGORIES.ADD_CATEGORIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.CATEGORIES.EDIT_CATEGORIES' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.MOVIES.CATEGORIES.DELETE_CATEGORIES' })} hasBullet={true} />
+
+      </SidebarMenuItemWithSub>
+      <SidebarMenuItem to='/apps/snacks' title={intl.formatMessage({ id: 'MENU.MOVIES.SNACKS' })} icon='coffee' />
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.USERS' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.USERS.MANAGE' })}
+        fontIcon='bi-chat-left'
+        icon='user'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.USERS.MANAGE' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.USERS.MANAGE.LIST_USERS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.USERS.MANAGE.EDIT_USERS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.USERS.MANAGE.DELETE_USERS' })} hasBullet={true} />
+      </SidebarMenuItemWithSub>
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.REVIEWS' })}</span>
+        </div>
+      </div>
 
       <SidebarMenuItemWithSub
         to='/apps/chat'
-        title={intl.formatMessage({ id: 'MENU.ASSETS' })}
+        title={intl.formatMessage({ id: 'MENU.REVIEWS.MANAGE' })}
         fontIcon='bi-chat-left'
-        icon='some-files'
+        icon='star'
       >
-        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SEARCH_ASSETS' })} hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.MY_ASSETS' })} hasBullet={true} />
-        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.UPLOAD_ASSETS' })} hasBullet={true} />
-
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.REVIEWS.MANAGE.LIST_REVIEWS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.REVIEWS.MANAGE.EDIT_REVIEWS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.REVIEWS.MANAGE.DELETE_REVIEWS' })} hasBullet={true} />
       </SidebarMenuItemWithSub>
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.COMMENTS' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.COMMENTS.MANAGE' })}
+        fontIcon='bi-chat-left'
+        icon='messages'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.COMMENTS.MANAGE.LIST_COMMENTS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.COMMENTS.MANAGE.EDIT_COMMENTS' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.COMMENTS.MANAGE.DELETE_COMMENTS' })} hasBullet={true} />
+      </SidebarMenuItemWithSub>
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.SETTINGS' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.SETTINGS.GENERAL' })}
+        fontIcon='bi-chat-left'
+        icon='setting-4'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SETTINGS.GENERAL.SITE_INFORMATION' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.SETTINGS.GENERAL.SOCIAL_MEDIA' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.SETTINGS.GENERAL.SOCIAL_MEDIA' })} hasBullet={true} />
+      </SidebarMenuItemWithSub>
+      <SidebarMenuItemWithSub
+        to='/apps/chat'
+        title={intl.formatMessage({ id: 'MENU.SETTINGS.SECURITY' })}
+        fontIcon='bi-chat-left'
+        icon='shield-tick'
+      >
+        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SETTINGS.SECURITY.CHANGE_PASSWORD' })} hasBullet={true} />
+        <SidebarMenuItem to='/apps/upload-assets' title={intl.formatMessage({ id: 'MENU.SETTINGS.SECURITY.MANAGE_ROLES' })} hasBullet={true} />
+      </SidebarMenuItemWithSub>
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.REPORTS' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.REPORTS.SALES_REPORT' })} icon='chart-simple-3' />
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.REPORTS.USER_ACTIVITY_REPORT' })} icon='mouse-square' />
+
+      <div className='menu-item'>
+        <div className='menu-content pt-8 pb-2'>
+          <span className='menu-section text-muted text-uppercase fs-8 ls-1'>{intl.formatMessage({ id: 'MENU.SUPPORT' })}</span>
+        </div>
+      </div>
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SUPPORT.HELP_CENTER' })} icon='question-2' />
+      <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.SUPPORT.CONTACT_SUPPORT' })} icon='support-24' />
       {/* <SidebarMenuItemWithSub
         to='/apps/chat'
         title='Chat'
@@ -110,27 +222,6 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/apps/chat/group-chat' title='Group Chart' hasBullet={true} />
         <SidebarMenuItem to='/apps/chat/drawer-chat' title='Drawer Chart' hasBullet={true} />
       </SidebarMenuItemWithSub> */}
-
-      <SidebarMenuItemWithSub
-        to='/apps/chat'
-        title={intl.formatMessage({ id: 'MENU.ADMINISTRATION' })}
-        fontIcon='bi-chat-left'
-        icon='user'
-      >
-        <SidebarMenuItem to='/apps/assets/search-assets' title={intl.formatMessage({ id: 'MENU.GCP_SETTINGS' })} hasBullet={true} />
-        <SidebarMenuItem to='/apps/chat/group-chat' title={intl.formatMessage({ id: 'MENU.AUDIT_LOGS' })} hasBullet={true} />
-        <SidebarMenuItem to='/apps/user-management/users' title='User management' hasBullet={true} />
-      </SidebarMenuItemWithSub>
-
-      <SidebarMenuItemWithSub
-        to='/apps/albums'
-        title='Albums'
-        fontIcon='bi-chat-left'
-        icon='book'
-      >
-        <SidebarMenuItem to='/apps/albums/my-album' title='My Albums' hasBullet={true} />
-        <SidebarMenuItem to='/apps/albums/create-album' title='Create Albums' hasBullet={true} />
-      </SidebarMenuItemWithSub>
     </>
   )
 }

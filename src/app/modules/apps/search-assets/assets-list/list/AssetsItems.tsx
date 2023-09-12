@@ -4,7 +4,6 @@ import { useSelector, shallowEqual } from 'react-redux';
 import { useTable, useSortBy, Column } from 'react-table';
 
 import { KTIcon } from '../../../../../../_metronic/helpers'
-import { RootState } from "../../../../../store";
 import { assetsItems } from "./items/_items";
 import { AssetsList } from "./items/AssetsList";
 import { ImageModal } from "../../../../../../_metronic/partials/modals/image-modal/ImageModal";
@@ -16,7 +15,6 @@ const itemsPerPage = 7;
 const AssetsTable = () => {
   const navigate = useNavigate();
 
-  const assets = useSelector((state: RootState) => state.assets.assets, shallowEqual);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [isGridView, setIsGridView] = useState(false);
@@ -24,9 +22,6 @@ const AssetsTable = () => {
   const [openImage, setOpenImage] = useState<boolean>(false);
   const [openImageURL, setOpenImageURL] = useState<string>('');
 
-  const totalPages = Math.ceil(assets?.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = assets?.slice(startIndex, startIndex + itemsPerPage);
 
   const columns = useMemo<any>(() => [
     {
@@ -238,13 +233,7 @@ const AssetsTable = () => {
           <div>
             <nav aria-label="Page navigation">
               <ul className="pagination justify-content-center">
-                {Array.from({ length: totalPages }, (_, index) => (
-                  <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-                    <button className="page-link" onClick={() => setCurrentPage(index + 1)}>
-                      {index + 1}
-                    </button>
-                  </li>
-                ))}
+                
               </ul>
             </nav>
           </div>

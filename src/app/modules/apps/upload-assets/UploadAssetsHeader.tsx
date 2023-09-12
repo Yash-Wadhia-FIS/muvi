@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { onAddAssets } from '../../../store/slices/assetSlice';
-import { RootState } from '../../../store';
+// import { RootState } from '../../../store';
 
 const AssetsHeader: React.FC = () => {
   const location = useLocation();
@@ -13,7 +13,7 @@ const AssetsHeader: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const metadata = useSelector((state: RootState) => state.assets.metadata, shallowEqual);
+  // const metadata = useSelector((state: RootState) => state.assets.metadata, shallowEqual);
 
   const [uploadImage, setUploadImage] = useState<string>('https://theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png');
   const [eventName, setEventName] = useState<string>('');
@@ -24,19 +24,6 @@ const AssetsHeader: React.FC = () => {
       const file = event.target.files[0];
       setUploadImage(URL.createObjectURL(file))
     };
-  }
-
-  const onSubmit = () => {
-    dispatch(onAddAssets({
-      index: 5,
-      title: eventName,
-      url: uploadImage,
-      size: '87KB',
-      status: 'Approved',
-      date: '26 Aug 2022. 10:26 pm',
-      metaData: metadata,
-    }));
-    navigate('/apps/assets/search-assets')
   }
 
   return (
@@ -87,7 +74,6 @@ const AssetsHeader: React.FC = () => {
                 data-kt-menu-trigger='click'
                 data-kt-menu-placement='bottom-end'
                 data-kt-menu-flip='top-end'
-                onClick={onSubmit}
               >
                 Submit
               </button>

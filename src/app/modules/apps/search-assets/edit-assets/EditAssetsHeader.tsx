@@ -6,7 +6,6 @@ import { useIntl } from 'react-intl';
 import {useSelector, shallowEqual} from 'react-redux';
 
 import {KTIcon} from '../../../../../_metronic/helpers'
-import { RootState } from '../../../../store';
 import { ImageModal } from '../../../../../_metronic/partials/modals/image-modal/ImageModal';
 import "../css/EditAssetsHeader.css";
 
@@ -25,8 +24,6 @@ const ProfileHeader: React.FC = () => {
   const params = useParams();
   const intl = useIntl();
 
-  const assets = useSelector((state: RootState) => state.assets.assets, shallowEqual);
-
   const [openImage, setOpenImage] = useState<boolean>(false);
   const [openImageURL, setOpenImageURL] = useState<string>('');
   
@@ -35,7 +32,7 @@ const ProfileHeader: React.FC = () => {
 
   const onOpenImage = () => {
     setOpenImage(true);
-    setOpenImageURL(assets[id].url);
+    // setOpenImageURL(assets[id].url);
   };
 
   return (
@@ -44,7 +41,7 @@ const ProfileHeader: React.FC = () => {
         <div className='d-flex flex-wrap flex-sm-nowrap mb-3'>
           <div className='me-7 mb-4'>
             <div className='image cursor-pointer' onClick={onOpenImage}>
-              <img src={assets[id].url} alt='mamai' height={190} width={300} className='rounded'/>
+              {/* <img src={assets[id].url} alt='muvi' height={190} width={300} className='rounded'/> */}
             </div>
           </div>
 
@@ -53,7 +50,7 @@ const ProfileHeader: React.FC = () => {
               <div className='d-flex flex-column'>
                 <div className='d-flex align-items-center mb-2'>
                   <a href='#' className='text-gray-800 text-hover-primary fs-2 fw-bolder me-1'>
-                  {assets[id].title}
+                  {/* {assets[id].title} */}
                   </a>
                   <a href='#'>
                     <KTIcon iconName='verify' className='fs-1 text-primary' />
@@ -66,7 +63,7 @@ const ProfileHeader: React.FC = () => {
                     className='d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2'
                   >
                     <KTIcon iconName='time' className='fs-4 me-1' />
-                    {assets[id].date}
+                    {/* {assets[id].date} */}
                   </a>
                 </div>
                 <a

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import {useSelector, shallowEqual} from 'react-redux';
 
 import { KTIcon } from '../../../../../_metronic/helpers'
-import { RootState } from "../../../../store";
 import { albumItems } from "../items/_items";
 import { AlbumList } from "../items/AlbumList";
 

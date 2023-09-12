@@ -53,28 +53,28 @@ const SidebarLogo = (props: PropsType) => {
         {config.layoutType === 'dark-sidebar' ? (
           <img
             alt='Logo'
-            src={toAbsoluteUrl('/media/logos/default-dark.svg')}
-            className='h-75px app-sidebar-logo-default'
+            src={toAbsoluteUrl('/media/logos/muvi.png')}
+            className='h-75px app-sidebar-logo-default p-3'
           />
         ) : (
           <>
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default.svg')}
-              className='h-25px app-sidebar-logo-default theme-light-show'
+              src={toAbsoluteUrl('/media/logos/muvi.png')}
+              className='h-75px app-sidebar-logo-default theme-light-show p-3'
             />
             <img
               alt='Logo'
-              src={toAbsoluteUrl('/media/logos/default-dark.svg')}
-              className='h-25px app-sidebar-logo-default theme-dark-show'
+              src={toAbsoluteUrl('/media/logos/muvi.png')}
+              className='h-25px app-sidebar-logo-default theme-dark-show p-3'
             />
           </>
         )}
 
         <img
           alt='Logo'
-          src={toAbsoluteUrl('/media/logos/default-small.svg')}
-          className='h-20px app-sidebar-logo-minimize'
+          src={toAbsoluteUrl('/media/logos/muvi.png')}
+          className='h-20px app-sidebar-logo-minimize p-3'
         />
       </Link>
 

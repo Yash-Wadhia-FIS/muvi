@@ -7,7 +7,7 @@ export function MenuInner() {
   const intl = useIntl()
   return (
     <>
-      <MenuItem title={intl.formatMessage({id: 'MENU.DASHBOARD'})} to='/dashboard' />
+      {/* <MenuItem title={intl.formatMessage({id: 'MENU.DASHBOARD'})} to='/dashboard' /> */}
       {/* <MenuItem title='Layout Builder' to='/builder' /> */}
       {/* <MenuInnerWithSub
         title='Crafted'
@@ -116,7 +116,7 @@ export function MenuInner() {
         {/* <MenuItem icon='abstract-28' to='/apps/user-management/users' title='User management' /> */}
       {/* </MenuInnerWithSub> */}
 
-      <MenuInnerWithSub
+      {/* <MenuInnerWithSub
         isMega={true}
         title={intl.formatMessage({id: 'MENU.MEGA_MENU'})}
         to='/mega-menu'
@@ -124,7 +124,7 @@ export function MenuInner() {
         menuTrigger='click'
       >
         <MegaMenu />
-      </MenuInnerWithSub>
+      </MenuInnerWithSub> */}
     </>
   )
 }

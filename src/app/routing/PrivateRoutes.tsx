@@ -3,6 +3,7 @@ import {Route, Routes, Navigate} from 'react-router-dom'
 import {MasterLayout} from '../../_metronic/layout/MasterLayout'
 import TopBarProgress from 'react-topbar-progress-indicator'
 import {DashboardWrapper} from '../pages/dashboard/DashboardWrapper'
+import CartPage from '../pages/cart/CartPage';
 import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
@@ -19,14 +20,16 @@ const PrivateRoutes = () => {
   const EditAssetsPage = lazy(() => import('../modules/apps/search-assets/edit-assets/EditAssetsPage'))
   const UploadAsset = lazy(() => import('../modules/apps/search-assets/upload-asset/uploadAsset'))
   const AlbumsPage = lazy(() => import('../modules/apps/albums/AlbumsPage'))
+  const SnacksPage = lazy(() => import('../modules/apps/snacks/SnacksPage'))
 
   return (
     <Routes>
       <Route element={<MasterLayout />}>
         {/* Redirect to Dashboard after success login/registartion */}
-        <Route path='auth/*' element={<Navigate to='/dashboard' />} />
+        <Route path='auth/*' element={<Navigate to='/apps/snacks' />} />
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
+        <Route path='cart' element={<CartPage />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />
         {/* Lazy Modules */}
@@ -107,6 +110,14 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <AlbumsPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='apps/snacks/*'
+          element={
+            <SuspensedView>
+              <SnacksPage />
             </SuspensedView>
           }
         />

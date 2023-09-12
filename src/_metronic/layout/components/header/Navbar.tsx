@@ -1,7 +1,11 @@
 import clsx from 'clsx'
-import {KTIcon, toAbsoluteUrl} from '../../../helpers'
-import {HeaderNotificationsMenu, HeaderUserMenu, Search, ThemeModeSwitcher} from '../../../partials'
-import {useLayout} from '../../core'
+import { useNavigate } from 'react-router'
+import { useSelector, shallowEqual } from 'react-redux'
+
+import { KTIcon, toAbsoluteUrl } from '../../../helpers'
+import { HeaderNotificationsMenu, HeaderUserMenu, Search, ThemeModeSwitcher } from '../../../partials'
+import { selectCartCount } from '../../../../app/store/cart/cart.selector'
+import { useLayout } from '../../core'
 
 const itemClass = 'ms-1 ms-lg-3'
 const btnClass =
@@ -10,10 +14,13 @@ const userAvatarClass = 'symbol-35px symbol-md-40px'
 const btnIconClass = 'fs-1'
 
 const Navbar = () => {
-  const {config} = useLayout()
+  const { config } = useLayout()
+  const navigate = useNavigate();
+
+  const count = useSelector(selectCartCount, shallowEqual);
   return (
     <div className='app-navbar flex-shrink-0'>
-      <div className={clsx('app-navbar-item align-items-stretch', itemClass)}>
+      {/* <div className={clsx('app-navbar-item align-items-stretch', itemClass)}>
         <Search />
       </div>
 
@@ -33,17 +40,20 @@ const Navbar = () => {
           <KTIcon iconName='element-plus' className={btnIconClass} />
         </div>
         <HeaderNotificationsMenu />
-      </div>
+      </div> */}
 
-      <div className={clsx('app-navbar-item', itemClass)}>
+      {/* <div className={clsx('app-navbar-item', itemClass)}>
         <div className={clsx('position-relative', btnClass)} id='kt_drawer_chat_toggle'>
           <KTIcon iconName='message-text-2' className={btnIconClass} />
           <span className='bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink' />
         </div>
-      </div>
+      </div> */}
 
-      <div className={clsx('app-navbar-item', itemClass)}>
-        <ThemeModeSwitcher toggleBtnClass={clsx('btn-active-light-primary btn-custom')} />
+      <div className={clsx('app-navbar-item', itemClass)} onClick={() => navigate("/cart")}>
+        <div className={btnClass}>
+          <KTIcon iconName='purchase' className={btnIconClass} />
+          <span className='mt-1'>({count})</span>
+        </div>
       </div>
 
       <div className={clsx('app-navbar-item', itemClass)}>
@@ -72,4 +82,4 @@ const Navbar = () => {
   )
 }
 
-export {Navbar}
+export { Navbar }
